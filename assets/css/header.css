@@ -1,0 +1,114 @@
+header {
+    width: 100%;
+    padding: 15px 10px 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+header .row {
+    width: 1440px;
+    justify-content: space-between;
+}
+
+header .logo img {
+    width: 100px;
+    border-radius: 50%;
+}
+
+/* header .menu ion-icon.md.hydrated {
+    font-size: 35px;
+    color: var(--white-color);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+header .menu ion-icon.md.hydrated:hover {
+    color: var(--accent-color);
+    transform: rotate(180deg); 
+} */
+
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 35px;
+    height: 25px;
+    cursor: pointer;
+    transition: 0.3s; 
+  }
+  
+  .bar {
+    width: 100%;
+    height: 4px;
+    background-color: var(--white-color);
+    border-radius: 2px;
+    transition: 0.3s ; 
+  }
+  
+  .hamburger:hover .bar {
+    background-color: var(--accent-color); 
+  }
+  
+  .hamburger .bar:nth-child(1) {
+   
+  }
+  
+  .hamburger .bar:nth-child(2) {
+    width: 50%;
+  }
+  .hamburger:hover .bar:nth-child(2) {
+    width: 100%;
+  }
+  
+  .hamburger .bar:nth-child(3) {
+    
+  }
+  
+
+
+/* list marquee */
+/* Scroll List */
+/* .scroll-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background: var(--secondary-color);
+}
+
+.scroll-list .row {
+    width: 100%;
+    display: flex;
+    gap: 30px;
+}
+
+.scroll-list .row:hover ul {
+    animation-play-state: paused;
+}
+
+.scroll-list ul {
+    display: flex;
+    flex-shrink: 0;
+    min-width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    animation: scroll-left 20s linear infinite ;
+}
+
+.scroll-list ul li {
+    font-size: 14px;
+    list-style-type: none;
+    text-transform: uppercase;
+    color: var(--white-color);
+}
+
+@keyframes scroll-left {
+    to {
+        transform: translateX(calc(-100% - 50px));
+    }
+} */
