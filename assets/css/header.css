@@ -51,64 +51,15 @@ header .menu ion-icon.md.hydrated:hover {
     background-color: var(--accent-color); 
   }
   
-  .hamburger .bar:nth-child(1) {
-   
-  }
-  
+
   .hamburger .bar:nth-child(2) {
-    width: 50%;
+    width: 80%;
+    transition: 0.3s;
+    transform: translateX(10px);
   }
+
   .hamburger:hover .bar:nth-child(2) {
     width: 100%;
+    transform: translateX(0px);
   }
   
-  .hamburger .bar:nth-child(3) {
-    
-  }
-  
-
-
-/* list marquee */
-/* Scroll List */
-/* .scroll-list {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    background: var(--secondary-color);
-}
-
-.scroll-list .row {
-    width: 100%;
-    display: flex;
-    gap: 30px;
-}
-
-.scroll-list .row:hover ul {
-    animation-play-state: paused;
-}
-
-.scroll-list ul {
-    display: flex;
-    flex-shrink: 0;
-    min-width: 100%;
-    justify-content: space-between;
-    align-items: center;
-    gap: 20px;
-    animation: scroll-left 20s linear infinite ;
-}
-
-.scroll-list ul li {
-    font-size: 14px;
-    list-style-type: none;
-    text-transform: uppercase;
-    color: var(--white-color);
-}
-
-@keyframes scroll-left {
-    to {
-        transform: translateX(calc(-100% - 50px));
-    }
-} */

@@ -1,42 +1,33 @@
+# Subhan Ahmed - Web & WordPress Developer
 
-Save List Elements
-  <!-- <section class="scroll-list">
-    <div class="row">
-      <ul class="odd">
-        <li>Frontend</li>
-        <li>Backend</li>
-        <li>Webflow</li>
-        <li>Full Stack</li>
-        <li>Frontend</li>
-        <li>Backend</li>
-        <li>Webflow</li>
-        <li>Full Stack</li>
-        <li>Frontend</li>
-        <li>Backend</li>
-        <li>Webflow</li>
-        <li>Full Stack</li>
-        <li>Frontend</li>
-        <li>Backend</li>
-        <li>Webflow</li>
-        <li>Full Stack</li>
-      </ul>
-      <ul class="odd">
-        <li>Frontend</li>
-        <li>Backend</li>
-        <li>Webflow</li>
-        <li>Full Stack</li>
-        <li>Frontend</li>
-        <li>Backend</li>
-        <li>Webflow</li>
-        <li>Full Stack</li>
-        <li>Frontend</li>
-        <li>Backend</li>
-        <li>Webflow</li>
-        <li>Full Stack</li>
-        <li>Frontend</li>
-        <li>Backend</li>
-        <li>Webflow</li>
-        <li>Full Stack</li>
-      </ul>
-    </div>
-  </section> -->
+## About Me
+
+Hi! I'm **Subhan Ahmed**, a professional WordPress developer with expertise in designing, developing, and maintaining WordPress websites. I currently work at **On Screen Solution**, where I create efficient, high-quality websites to meet client needs.
+
+I specialize in:
+- WordPress theme development
+- Custom plugin development
+- Responsive web design
+- Website maintenance and optimization
+
+Feel free to explore my portfolio and the projects I've worked on!
+
+## Skills & Technologies
+- WordPress
+- Shopify
+- CMS
+- HTML/CSS
+- JavaScript
+
+## Contact
+
+You can reach me at:
+- **Email**: subhanahmede860@gmail.com
+
+## Projects
+
+Check out my GitHub repositories for my work and open-source projects!
+
+---
+
+Thank you for visiting my portfolio!

@@ -9,7 +9,7 @@
 
 .hero .row {
     flex-direction: column;
-    gap: 10px;
+    gap: 5px;
 }
 
 .hero h1 {
@@ -18,13 +18,21 @@
     color: #fff;
 }
 
+.hero h1 span {
+    font-family: Decog, sans-serif;
+}
 .hero h3 {
     font-size: 40px;
     line-height: 40px;
+    color: var(--secondary-color);
 }
 
 .hero p {
     width: 50%;
     text-align: center;
     font-size: 18px;
+}
+
+.hero p span {
+    color: var(--secondary-color);
 }

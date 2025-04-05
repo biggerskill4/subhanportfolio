@@ -105,3 +105,16 @@ a:hover {
         font-size: 14px;
     }
 }
+
+
+.custom-cursor {
+    position: fixed;
+    width: 30px; 
+    height: 30px;
+    background: var(--accent-color); 
+    border-radius: 50%;
+    pointer-events: none;
+    mix-blend-mode: difference; 
+    transform: translate(-50%, -50%);
+    transition: transform 0.1s ease-out;
+}
