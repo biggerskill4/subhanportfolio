@@ -1,7 +1,6 @@
 .hero {
     width: 100%;
     height: 100vh;
-    background-image: url('https://via.placeholder.com/1920x1080');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -31,8 +30,80 @@
     width: 50%;
     text-align: center;
     font-size: 18px;
+    animation: textColor 3s infinite;
+}
+
+@keyframes textColor {
+    0%, 100% {
+        color: var(--text-color);
+    }
+    50% {
+        color: var(--white-color);
+    }
 }
 
 .hero p span {
     color: var(--secondary-color);
+}
+
+
+@media(max-width: 1440px) {
+    .hero h1 {
+        font-size: 160px;
+        line-height: 160px;
+    }
+}
+
+@media(max-width: 1024px) {
+    .hero h1 {
+        font-size: 120px;
+        line-height: 120px;
+    }
+    .hero p {
+        width: 80%;
+    }
+}
+
+@media(max-width: 768px) {
+    .hero h3 {
+        font-size: 30px;
+        line-height: 30px;
+    }
+    .hero h1 {
+        font-size: 100px;
+        line-height: 100px;
+    }
+    .hero p {
+        width: 85%;
+        font-size: 16px;
+    }
+}
+
+@media(max-width: 640px) {
+    .hero h1 {
+        font-size: 80px;
+        line-height: 80px;
+    }
+    .hero p {
+        width: 85%;
+    }
+}
+
+@media(max-width: 500px) {
+    .hero h3 {
+        font-size: 24px;
+        line-height: 24px;
+    }
+    .hero h1 {
+        flex-wrap: wrap;
+        font-size: 80px;
+        line-height: 80px;
+    }
+    .hero h1 .break {
+        width: 100%;
+        height: 0;
+    }
+    .hero p {
+        width: 90%;
+    }
 }

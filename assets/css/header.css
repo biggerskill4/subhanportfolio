@@ -1,65 +1,97 @@
 header {
-    width: 100%;
-    padding: 15px 10px 10px;
-    position: absolute;
-    top: 0;
-    left: 0;
+  width: 100%;
+  padding: 15px 10px 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 header .row {
-    width: 1440px;
-    justify-content: space-between;
+  width: 1440px;
+  justify-content: space-between;
 }
-
+header .logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 header .logo img {
-    width: 100px;
-    border-radius: 50%;
+  width: 100px;
+  object-fit: contain;
+  border-radius: 50%;
+  transition: 0.3s;
+  cursor: pointer;
 }
 
-/* header .menu ion-icon.md.hydrated {
-    font-size: 35px;
-    color: var(--white-color);
-    cursor: pointer;
-    transition: 0.3s;
+header .logo img:hover {
+  transform: scale(1.1);
 }
-
-header .menu ion-icon.md.hydrated:hover {
-    color: var(--accent-color);
-    transform: rotate(180deg); 
-} */
 
 .hamburger {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-end;
-    width: 35px;
-    height: 25px;
-    cursor: pointer;
-    transition: 0.3s; 
-  }
-  
-  .bar {
-    width: 100%;
-    height: 4px;
-    background-color: var(--white-color);
-    border-radius: 2px;
-    transition: 0.3s ; 
-  }
-  
-  .hamburger:hover .bar {
-    background-color: var(--accent-color); 
-  }
-  
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 35px;
+  height: 25px;
+  cursor: pointer;
+  transition: 0.3s;
+}
 
-  .hamburger .bar:nth-child(2) {
-    width: 80%;
-    transition: 0.3s;
-    transform: translateX(10px);
-  }
+.bar {
+  width: 100%;
+  height: 4px;
+  background-color: var(--white-color);
+  border-radius: 2px;
+  transition: 0.3s;
+}
 
-  .hamburger:hover .bar:nth-child(2) {
-    width: 100%;
+.hamburger:hover .bar {
+  background-color: var(--accent-color);
+}
+
+
+.hamburger .bar:nth-child(2) {
+  width: 80%;
+  transition: 0.3s;
+  transform: translateX(0px);
+  animation: barMove 3s infinite ease;
+}
+
+@keyframes barMove {
+
+  0%,
+  100% {
     transform: translateX(0px);
   }
-  
+
+  50% {
+    transform: translateX(10px);
+    background: var(--accent-color);
+  }
+}
+
+.hamburger:hover .bar:nth-child(2) {
+  width: 100%;
+  transform: translateX(0px);
+  animation: normal;
+}
+
+@media(max-width: 1440px) {
+  header .row {
+    width: 95%;
+  }
+}
+
+@media(max-width: 500px) {
+  header .logo img {
+    width: 80px;
+  }
+  .hamburger {
+    width: 30px;
+    height: 20px;
+  }
+  .bar {
+    height: 3px;
+  }
+}
