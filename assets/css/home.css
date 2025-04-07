@@ -24,6 +24,7 @@
     font-size: 40px;
     line-height: 40px;
     color: var(--secondary-color);
+    text-align: center;
 }
 
 .hero p {

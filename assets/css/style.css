@@ -85,13 +85,11 @@ a:hover {
 
 .cta-btn {
     background: var(--accent-color);    
-    background: linear-gradient(126deg, #C115B5 0%, #7508A6 100%);
     color: var(--white-color);
     padding: 12px 20px;
     border-radius: 50px;
     transition: 0.3s;
     font-weight: 500;
-    font-family: "Inter", serif;
 }
 
 .cta-btn:hover {
@@ -123,6 +121,5 @@ a:hover {
         font-size: 14px;
     }
 }
-
 
 
