@@ -28,8 +28,19 @@ function animateCursor() {
 animateCursor();
 
 
-// Gsap
 window.onload = function () {
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    // preloader
+    const preloader = document.querySelector('#preloader');
+    preloader.style.opacity = '0';
+    preloader.style.pointerEvents = 'none';
+    setTimeout(() => {
+      preloader.style.display = 'none';
+    }, 500); 
+
+    // Gsap
     // default Slides
     // gsap.from(".leftSlide", {
     //     duration: 1,

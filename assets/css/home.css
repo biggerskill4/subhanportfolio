@@ -108,3 +108,19 @@
         width: 90%;
     }
 }
+
+
+.aboutme {
+    width: 100%;
+    height: 100vh;
+}
+.aboutme .row {
+    width: 1440px;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+}
+
+.aboutme p span {
+    color: var(--secondary-color);
+}

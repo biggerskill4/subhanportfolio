@@ -18,9 +18,17 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/gsap.min.js"
     integrity="sha512-f6bQMg6nkSRw/xfHw5BCbISe/dJjXrVGfz9BSDwhZtiErHwk7ifbmBEtF9vFW8UNIQPhV2uEFVyI/UHob9r7Cw=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 </head>
 
 <body>
+  
+  <!-- preloader -->
+  <div id="preloader">
+    <img src="./assets/images/su-logo.png" alt="">
+    <div class="spinner"></div>
+  </div>  
+  <!-- End preloader -->
 
   <!-- header -->
   <header class="flex">
@@ -44,7 +52,10 @@
         <p>I am a professional WordPress developer, working at 'On Screen Solution.' I have
           expertise in designing, developing, and maintaining WordPress websites to meet client needs
           efficiently.</p>
-        <a href="mailto:subhanahmede860@gmail.com" class="cta-btn">Contact Me</a>
+        <div class="btn">
+          <a href="mailto:subhanahmede860@gmail.com" class="cta-btn">Contact Me</a>
+        <a href="mailto:subhanahmede860@gmail.com" class="cta-btn">Resume</a>
+        </div>
         <ul class="socialIcons">
           <li><a href="#" class="flex"><ion-icon name="logo-whatsapp"></ion-icon></a></li>
           <li><a href="#" class="flex"><ion-icon name="logo-linkedin"></ion-icon></a></li>
@@ -67,8 +78,7 @@
   <!-- End sideBar -->
   <!-- End header -->
 
-
-
+  <!-- Hero -->
   <section class="hero flex">
     <div class="row flex">
       <div class="subtitle">
@@ -93,7 +103,23 @@
         efficiently.</p>
     </div>
   </section>
+  <!-- End Hero -->
 
+  <section class="aboutme flex">
+    <div class="row flex">
+      <h2>About Me</h2>
+      <p><p>Hi, I'm <span>Subhan Ahmed</span>, a passionate <span>Web Developer</span> from <span>Karachi</span>, with over <span>2 years</span> of hands-on experience crafting modern, responsive websites. I specialize in building scalable and user-friendly sites using popular platforms like <span>WordPress</span> and <span>Shopify</span>, as well as custom solutions powered by <span>HTML</span>, <span>CSS</span>, and <span>JavaScript</span>.<br><br> Over the past two years, I've helped individuals, startups, and businesses bring their ideas to life through clean design and functional development. Whether it's a dynamic <span>e-commerce store</span> or a sleek <span>business site</span>, I bring both technical skill and creative problem-solving to every project I take on.</p>
+    </p>
+        <ul>
+          <li>✅ <strong>WordPress Development</strong> – Custom themes, plugin integration, site optimization</li>
+          <li>✅ <strong>Shopify</strong> – Store setup, theme customization, product management</li>
+          <li>✅ <strong>CMS Solutions</strong> – Streamlined content workflows with user-friendly interfaces</li>
+          <li>✅ <strong>HTML / CSS</strong> – Pixel-perfect layouts and responsive design</li>
+          <li>✅ <strong>JavaScript</strong> – Interactive UI features, DOM manipulation, and basic logic integration</li>
+        </ul>
+        
+    </div>
+  </section>
 
   <script src="./assets/js/script.js"></script>
 </body>

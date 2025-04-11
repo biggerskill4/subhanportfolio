@@ -29,6 +29,7 @@
 html {
     overflow-x: hidden;
 }
+
 ::selection {
     color: var(--primary-color);
     background: var(--secondary-color)
@@ -36,15 +37,16 @@ html {
 
 /* width */
 ::-webkit-scrollbar {
-    width: 8px;
+    width: 5px;
+
 }
-  
-  /* Track */
+
+/* Track */
 ::-webkit-scrollbar-track {
     background: #000;
-  }
-   
-  /* Handle */
+}
+
+/* Handle */
 ::-webkit-scrollbar-thumb {
     background: linear-gradient(126deg, #C115B5 0%, #7508A6 100%);
     border-radius: 10px;
@@ -73,6 +75,14 @@ h6 {
     font-weight: 500;
 }
 
+h2 {
+    font-size: 100px;
+}
+
+p {
+    font-weight: 18px;
+}
+
 a {
     color: var(--text-color);
     text-decoration: none;
@@ -84,7 +94,7 @@ a:hover {
 }
 
 .cta-btn {
-    background: var(--accent-color);    
+    background: var(--accent-color);
     color: var(--white-color);
     padding: 12px 20px;
     border-radius: 50px;
@@ -94,20 +104,69 @@ a:hover {
 
 .cta-btn:hover {
     color: var(--white-color);
-    box-shadow: 0px 2px 15px var(--accent-color);
+    transform: translateY(-5px);
 }
 
 .custom-cursor {
     position: fixed;
-    width: 30px; 
+    width: 30px;
     height: 30px;
-    background: var(--accent-color); 
+    background: var(--accent-color);
     border-radius: 50%;
     pointer-events: none;
-    mix-blend-mode: difference; 
+    mix-blend-mode: difference;
     transform: translate(-50%, -50%);
     transition: transform 0.1s ease-out;
+    z-index: 99999999;
 }
+
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 9999;
+    gap: 50px;
+    transition: 0.3s;
+}
+#preloader img {
+    width: 200px;
+    animation: transparency 3s linear infinite;
+}
+#preloader .spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid var(--white-color);
+    border-top: 4px solid var(--accent-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes transparency {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.2;
+    }
+}
+/* Spinner animation */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
 
 @media(max-width: 768px) {
     .custom-cursor {
@@ -121,5 +180,3 @@ a:hover {
         font-size: 14px;
     }
 }
-
-
