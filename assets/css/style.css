@@ -18,7 +18,7 @@
 :root {
     --primary-color: #0B0B0B;
     --secondary-color: #C115B5;
-    --text-color: #c2c2c2;
+    --text-color: #ffffff;
     --accent-color: #C115B5;
     --theme-color: #0B0B0B;
     --white-color: #FFFFFF;
@@ -76,7 +76,8 @@ h6 {
 }
 
 h2 {
-    font-size: 100px;
+    font-size: 120px;
+    line-height: 120px;
 }
 
 p {

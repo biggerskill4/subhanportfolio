@@ -37,8 +37,8 @@ window.onload = function () {
     preloader.style.opacity = '0';
     preloader.style.pointerEvents = 'none';
     setTimeout(() => {
-      preloader.style.display = 'none';
-    }, 500); 
+        preloader.style.display = 'none';
+    }, 500);
 
     // Gsap
     // default Slides
@@ -82,6 +82,28 @@ window.onload = function () {
     });
 
     gsap.from(".hero h1 span", {
+        scrollTrigger: {
+            trigger: ".hero",
+            start: "top 20%",
+            end: "bottom 70%",
+            toggleActions: "play reverse restart reverse",
+        },
+        duration: 0.5,
+        opacity: 0,
+        y: -100,
+        color: "#C115B5",
+        stagger: 0.1,
+        ease: "power3.out",
+    });
+
+    gsap.from(".aboutme h2 span", {
+        scrollTrigger: {
+            trigger: ".aboutme",
+            start: "top 35%",
+            end: "bottom 0%",
+            toggleActions: "play reverse restart reverse",
+            // markers: true,
+        },
         duration: 0.5,
         opacity: 0,
         y: -100,
