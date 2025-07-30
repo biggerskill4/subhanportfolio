@@ -2,137 +2,236 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Subhan's Portfolio</title>
-  <!-- css -->
-  <link rel="stylesheet" href="./assets/css/style.css">
-  <!-- favicon -->
-  <link rel="shortcut icon" href="./assets/images/favicon.ico" type="image/x-icon">
-  <!-- ionicons -->
-  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-  <!-- font-awesome -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-  <!-- gsap -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/gsap.min.js"
-    integrity="sha512-f6bQMg6nkSRw/xfHw5BCbISe/dJjXrVGfz9BSDwhZtiErHwk7ifbmBEtF9vFW8UNIQPhV2uEFVyI/UHob9r7Cw=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subhan's Portfolio</title>
+    <!-- links -->
+    <link rel="shortcut icon" href="./assets/images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./assets/css/style.css">
+
 </head>
 
 <body>
-  
-  <!-- preloader -->
-  <div id="preloader">
-    <img src="./assets/images/su-logo.png" alt="">
-    <div class="spinner"></div>
-  </div>  
-  <!-- End preloader -->
-
-  <!-- header -->
-  <header class="flex">
-    <div class="row flex delayed">
-      <div class="logo">
-        <img src="./assets/images/su-logo.png" alt="Site Logo">
-      </div>
-      <div class="hamburger" id="menuToggle">
-        <div class="bar"></div>
-        <div class="bar"></div>
-        <div class="bar"></div>
-      </div>
+    <!-- preloader -->
+    <div id="preloader">
+        <img src="./assets/images/su-logo.png" alt="">
+        <div class="spinner"></div>
     </div>
-  </header>
+    <!-- preloader -->
 
-  <!-- sideBar -->
-  <div class="menubar flex">
-    <div class="myDetails flex">
-      <div class="row flex leftSlide">
-        <h2>Subhan Ahmed</h2>
-        <p>I am a professional WordPress developer, working at 'On Screen Solution.' I have
-          expertise in designing, developing, and maintaining WordPress websites to meet client needs
-          efficiently.</p>
-        <div class="btn">
-          <a href="mailto:subhanahmede860@gmail.com" class="cta-btn">Contact Me</a>
-        <a href="mailto:subhanahmede860@gmail.com" class="cta-btn">Resume</a>
+    <!-- header -->
+    <header class="flex">
+        <div class="row flex">
+            <div class="site-logo"><a href="#top"><img src="./assets/images/su-logo.png" alt="SU logo"></a></div>
+            <div class="navbar">
+                <ul class="flex">
+                    <li><a href="#top">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
         </div>
-        <ul class="socialIcons">
-          <li><a href="#" class="flex"><ion-icon name="logo-whatsapp"></ion-icon></a></li>
-          <li><a href="#" class="flex"><ion-icon name="logo-linkedin"></ion-icon></a></li>
-          <li><a href="#" class="flex"><ion-icon name="logo-instagram"></ion-icon></a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="quickLinks flex">
-      <div class="row flex rightSlide">
-        <h3>Quick Links</h3>
-        <ul class="menu">
-          <li><a href="#">Subhan Ahmed</a></li>
-          <li><a href="#">About Me</a></li>
-          <li><a href="#">My Projects</a></li>
-          <li><a href="#">Contact Me</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-  <!-- End sideBar -->
-  <!-- End header -->
+    </header>
+    <!-- End header -->
 
-  <!-- Hero -->
-  <section class="hero flex">
-    <div class="row flex">
-      <div class="subtitle">
-        <h3>Web & Wordpress Developer</h3>
-      </div>
-      <h1 class="flex">
-        <span>S</span>
-        <span>u</span>
-        <span>b</span>
-        <span>h</span>
-        <span>a</span>
-        <span>n</span>
-        <span class="break">&nbsp;</span>
-        <span>A</span>
-        <span>h</span>
-        <span>m</span>
-        <span>e</span>
-        <span>d</span>
-      </h1>
-      <p>I am a professional <span>WordPress developer</span>, working at <span>'On Screen Solution.'</span> I have
-        expertise in designing, developing, and maintaining WordPress websites to <span>meet client</span> needs
-        efficiently.</p>
-    </div>
-  </section>
-  <!-- End Hero -->
 
-  <section class="aboutme flex">
-    <div class="row flex">
-      <h2 class="flex">        
-        <span>A</span>
-        <span>b</span>
-        <span>o</span>
-        <span>u</span>
-        <span>t</span>
-        <span class="break">&nbsp;</span>
-        <span>M</span>
-        <span>e</span>
-        </h2>
-      <p><p>Hi, I'm <span>Subhan Ahmed</span>, a passionate <span>Web Developer</span> from <span>Karachi</span>, with over <span>2 years</span> of hands-on experience crafting modern, responsive websites. I specialize in building scalable and user-friendly sites using popular platforms like <span>WordPress</span> and <span>Shopify</span>, as well as custom solutions powered by <span>HTML</span>, <span>CSS</span>, and <span>JavaScript</span>.<br><br> Over the past two years, I've helped individuals, startups, and businesses bring their ideas to life through clean design and functional development. Whether it's a dynamic <span>e-commerce store</span> or a sleek <span>business site</span>, I bring both technical skill and creative problem-solving to every project I take on.</p>
-    </p>  
-    <div class="cards-grid">
-      <div class="card">
-        <div class="card"><h3>HTML</h3></div>
-        <div class="card"><h3>CSS</h3></div>
-        <div class="card"><h3>JavaScript</h3></div>
-        <div class="card"><h3>WordPress</h3></div>
-        <div class="card"><h3>Shopify</h3></div>
-        <div class="card"><h3>CMS</h3></div>
-      </div>
-    </div>      
-    </div>
-  </section>
+    <!-- banner -->
+    <section class="flex banner" id="top">
+        <div class="row flex">
+            <h2>Web & Wordpress Developer</h2>
+            <h1>Subhan Ahmed</h1>
+            <p>I am a professional WordPress developer, working at 'On Screen Solution.' I have expertise in designing,
+                developing, and maintaining WordPress websites to meet client needs efficiently.</p>
+            <a href="#contact" class="cta">Let’s Get Started</a>
+        </div>
+    </section>
+    <!-- End banner -->
 
-  <script src="./assets/js/script.js"></script>
+    <!-- About section -->
+    <section class="about flex" id="about">
+        <div class="row flex">
+            <div class="column aboutimg">
+                <img src="./assets/images/su-logo.png" alt="Subhan's Picture">
+            </div>
+            <div class="column aboutinfo flex">
+                <h2>Why You Hire Me?</h2>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                    industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
+                    and scrambled it to make a type specimen book. It has survived not only five centuries, but also the
+                    leap into electronic typesetting, remaining Essentially unchanged.
+                    <br><br>
+                    It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
+                    and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem
+                    Ipsum.
+                </p>
+                <ul class="list">
+                    <li>Wordpress</li>
+                    <li>Shopify</li>
+                    <li>CMS</li>
+                    <li>JS</li>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                </ul>
+                <a href="#" class="cta">Resume CV</a>
+            </div>
+        </div>
+    </section>
+    <!-- End About section -->
+
+    <!-- counter -->
+    <section class="counters flex">
+        <div class="flex row">
+            <div class="counter">
+                <h3>2.2<span>+</span></h3>
+                <p>Years Of Experience</p>
+            </div>
+            <div class="counter">
+                <h3>85<span>+</span></h3>
+                <p>Completed Projects</p>
+            </div>
+            <div class="counter">
+                <h3>85<span>+</span></h3>
+                <p>Completed Projects</p>
+            </div>
+            <div class="counter">
+                <h3>98<span>%</span></h3>
+                <p>Client Satisfactions</p>
+            </div>
+        </div>
+    </section>
+    <!-- End counter -->
+
+    <!-- Services -->
+    <section class="services flex" id="services">
+        <div class="row flex">
+            <h2>Services</h2>
+            <div class="serviceGrid flex">
+                <div class="serviceCard cardOne">
+                    <div class="number">1</div>
+                    <div class="serviceInfo">
+                        <h3>Wordpress Developer</h3>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+                            been the industry's standard dummy</p>
+                    </div>
+                </div>
+                <div class="serviceCard cardTwo">
+                    <div class="number">2</div>
+                    <div class="serviceInfo">
+                        <h3>Ecommerce</h3>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting</p>
+                    </div>
+                </div>
+            </div>
+            <div class="serviceGrid flex">
+                <div class="serviceCard cardThree">
+                    <div class="number">3</div>
+                    <div class="serviceInfo">
+                        <h3>Services</h3>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting</p>
+                    </div>
+                </div>
+                <div class="serviceCard cardFour">
+                    <div class="number">4</div>
+                    <div class="serviceInfo">
+                        <h3>Shopify CMS Developer</h3>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+                            been the industry's standard dummy</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Services -->
+
+    <!-- Marquee -->
+    <section class="scroll-list">
+        <div class="row">
+            <ul>
+                <li>Frontend</li>
+                <li>Backend</li>
+                <li>Webflow</li>
+                <li>Full Stack</li>
+                <li>Frontend</li>
+                <li>Backend</li>
+                <li>Webflow</li>
+                <li>Full Stack</li>
+            </ul>
+            <ul>
+                <li>Frontend</li>
+                <li>Backend</li>
+                <li>Webflow</li>
+                <li>Full Stack</li>
+                <li>Frontend</li>
+                <li>Backend</li>
+                <li>Webflow</li>
+                <li>Full Stack</li>
+            </ul>
+        </div>
+    </section>
+    <!-- End Marquee -->
+
+    <!-- Projects -->
+    <section class="projects flex" id="projects">
+        <div class="row flex">
+            <h2>Projects</h2>
+            <div class="projectsGrid flex">
+                <div class="project">
+                    <img src="./assets/images/project1.png" alt="Project 1">
+                    <div class="projectDetail">
+                        <small>Service website</small>
+                        <h3>Watkins Essential Oils</h3>
+                        <a href="#" class="cta">View Now</a>
+                    </div>
+                </div>
+                <div class="project">
+                    <img src="./assets/images/project1.png" alt="Project 1">
+                    <div class="projectDetail">
+                        <small>Service website</small>
+                        <h3>Watkins Essential Oils</h3>
+                        <a href="#" class="cta">View Now</a>
+                    </div>
+                </div>
+                <div class="project">
+                    <img src="./assets/images/project1.png" alt="Project 1">
+                    <div class="projectDetail">
+                        <small>Service website</small>
+                        <h3>Watkins Essential Oils</h3>
+                        <a href="#" class="cta">View Now</a>
+                    </div>
+                </div>
+                <div class="project">
+                    <img src="./assets/images/project1.png" alt="Project 1">
+                    <div class="projectDetail">
+                        <small>Service website</small>
+                        <h3>Watkins Essential Oils</h3>
+                        <a href="#" class="cta">View Now</a>
+                    </div>
+                </div>
+                <div class="project">
+                    <img src="./assets/images/project1.png" alt="Project 1">
+                    <div class="projectDetail">
+                        <small>Service website</small>
+                        <h3>Watkins Essential Oils</h3>
+                        <a href="#" class="cta">View Now</a>
+                    </div>
+                </div>
+                <div class="project">
+                    <img src="./assets/images/project1.png" alt="Project 1">
+                    <div class="projectDetail">
+                        <small>Service website</small>
+                        <h3>Watkins Essential Oils</h3>
+                        <a href="#" class="cta">View Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Projects -->
+
+
+    <script src="./assets/js/script.js"></script>
 </body>
 
 </html>
