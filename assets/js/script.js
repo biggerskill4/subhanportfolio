@@ -27,6 +27,24 @@ function animateCursor() {
 // Start animation loop
 animateCursor();
 
+
+// List of elements on which cursor should grow
+const hoverTargets = document.querySelectorAll(".hover-grow");
+
+hoverTargets.forEach(target => {
+    target.addEventListener("mouseenter", () => {
+        cursor.style.transform = "translate(-50%, -50%) scale(2)";
+        cursor.style.background = "#FFF";
+    });
+
+    target.addEventListener("mouseleave", () => {
+        cursor.style.transform = "translate(-50%, -50%) scale(1)";
+        cursor.style.background = "#C115B5";
+    });
+});
+
+
+
 window.onload = () => {
     // preloader
     const preloader = document.querySelector('#preloader');

@@ -8,6 +8,8 @@
     <!-- links -->
     <link rel="shortcut icon" href="./assets/images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="./assets/css/style.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
 </head>
 
@@ -108,7 +110,7 @@
         <div class="row flex">
             <h2>Services</h2>
             <div class="serviceGrid flex">
-                <div class="serviceCard cardOne">
+                <div class="serviceCard cardOne hover-grow">
                     <div class="number">1</div>
                     <div class="serviceInfo">
                         <h3>Wordpress Developer</h3>
@@ -116,7 +118,7 @@
                             been the industry's standard dummy</p>
                     </div>
                 </div>
-                <div class="serviceCard cardTwo">
+                <div class="serviceCard cardTwo hover-grow">
                     <div class="number">2</div>
                     <div class="serviceInfo">
                         <h3>Ecommerce</h3>
@@ -125,14 +127,14 @@
                 </div>
             </div>
             <div class="serviceGrid flex">
-                <div class="serviceCard cardThree">
+                <div class="serviceCard cardThree hover-grow">
                     <div class="number">3</div>
                     <div class="serviceInfo">
                         <h3>Services</h3>
                         <p>Lorem Ipsum is simply dummy text of the printing and typesetting</p>
                     </div>
                 </div>
-                <div class="serviceCard cardFour">
+                <div class="serviceCard cardFour hover-grow">
                     <div class="number">4</div>
                     <div class="serviceInfo">
                         <h3>Shopify CMS Developer</h3>
@@ -230,6 +232,96 @@
     </section>
     <!-- End Projects -->
 
+    <!-- testimonials -->
+    <section class="testimonials flex">
+        <div class="row flex">
+            <div class="column flex">
+                <h3>Testimonials</h3>
+                <h2>Client Reviews</h2>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                    industry's standard</p>
+                <a href="#" class="cta">Your Reivew</a>
+            </div>
+            <div class="column flex">
+                <div class="reviewCard">
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+                        the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
+                        of type and scrambled it to make a type specimen book. </p>
+                    <div class="reviewInfo">
+                        <h3>Subhan Ahmed</h3>
+                        <small>Web Developer</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end testimonials -->
+
+    <!-- Contact -->
+    <section class="contact flex" id="contact">
+        <div class="row flex">
+            <h2>Contact Me</h2>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                industry.</p>
+            <div class="contactGrid flex">
+                <div class="column flex">
+                    <div class="contactLinks">
+                        <ul class="flex">
+                            <li>
+                                <a href="#" class="flex anchor">
+                                    <div class="listIcon"><ion-icon name="mail-sharp"></ion-icon></div>
+                                    <div class="listContent">
+                                        <h3>Email Address</h3>
+                                        <small>subhanahmede860@gmail.com</small>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="flex anchor">
+                                    <div class="listIcon"><ion-icon name="call"></ion-icon></div>
+                                    <div class="listContent">
+                                        <h3>Phone Number</h3>
+                                        <small>+92 309 231 5052</small>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="column flex">
+                    <form action="">
+                        <div class="formField flex">
+                            <input type="text" name="name" id="name" placeholder="Your Name*" required>
+                            <input type="email" name="email" id="email" placeholder="yourmail@example.com*" required>
+                        </div>
+                        <div class="formField flex">
+                            <input type="text" name="subject" id="subject" placeholder="Your Subject*" required>
+                        </div>
+                        <div class="formField flex">
+                            <textarea name="message" id="message" placeholder="Your Message" rows="8"></textarea>
+                        </div>
+                        <button class="cta">Submit Now</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Contact -->
+
+    <!-- footer -->
+    <footer class="flex">
+        <div class="footersection flex">
+            <h3>Have an Idea?</h3>
+            <h2>Let<span>’</span>s Make Something Amazing Together.</h2>
+            <ul class="flex">
+                <li><a href="#"><ion-icon name="logo-facebook"></ion-icon></a></li>
+                <li><a href="#"><ion-icon name="logo-instagram"></ion-icon></a></li>
+                <li><a href="#"><ion-icon name="logo-linkedin"></ion-icon></a></li>
+            </ul>
+        </div>
+        <small>Copyright © 2025 Subhan Ahmed. All rights reserved.</small>
+    </footer>
+    <!-- End footer -->
 
     <script src="./assets/js/script.js"></script>
 </body>

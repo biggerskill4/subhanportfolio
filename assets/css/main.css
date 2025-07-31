@@ -181,6 +181,14 @@ header .navbar li a {
     border: 1px solid var(--colorone);
     border-radius: 20px;
     justify-content: space-between;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.serviceGrid .serviceCard:hover {
+    transform: scale(1.01);
+    box-shadow: 0 0 10px var(--colortwo);
+    z-index: 999;
 }
 
 .serviceGrid .serviceCard .number {
@@ -238,6 +246,7 @@ header .navbar li a {
 .scroll-list .row {
     width: 100%;
     display: flex;
+    gap: 50px;
 }
 
 .scroll-list .row:hover ul {
@@ -252,10 +261,6 @@ header .navbar li a {
     align-items: center;
     gap: 50px;
     animation: scroll-left 30s linear infinite;
-}
-
-.scroll-list .odd {
-    animation-delay: 0.5s;
 }
 
 .scroll-list ul li {
@@ -357,3 +362,196 @@ header .navbar li a {
 }
 
 /* End Projects */
+
+/* Reviews */
+
+.testimonials {
+    width: 100%;
+    padding: 60px 10px;
+    background: var(--colorfour);
+}
+
+.testimonials .row {
+    width: var(--max-width);
+    gap: 30px;
+}
+
+.testimonials .column {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    width: 100%;
+}
+
+.testimonials .column:nth-child(2) {
+    align-items: flex-end;
+}
+
+.testimonials .column h2 {
+    line-height: 80px;
+}
+
+.reviewCard {
+    padding: 60px 30px 30px;
+    height: 300px;
+    width: 100%;
+    background: var(--colorthree);
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 20px;
+    border-radius: 20px;
+    border: 1px solid var(--colorone);
+}
+
+.reviewCard .reviewInfo h3 {
+    font-size: 30px;
+}
+.reviewCard .reviewInfo small {
+    font-size: 20px;
+    font-family: var(--heading-font);
+}
+
+/* End Reviews */
+
+/* Contact */
+
+.contact {
+    width: 100%;
+    padding: 100px 10px 60px;
+}
+
+.contact .row {
+    flex-direction: column;
+    width: var(--max-width);
+}
+
+.contact .row p {
+    width: 50%;
+    text-align: center;
+}
+
+.contact .contactGrid {
+    margin-top: 50px;
+    gap: 20px;
+    width: 100%;
+    align-items: flex-start;
+}
+
+.contactGrid .column {
+    width: 100%;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.contactGrid .column:nth-child(2) {
+    align-items: center;
+}
+
+.contactLinks ul.flex {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 50px;
+    list-style-type: none;
+}
+
+.contactLinks li .anchor {
+    gap: 20px;
+}
+
+.contactLinks li .anchor ion-icon.md.hydrated {
+    font-size: 50px;
+}
+
+.contactLinks li .anchor h3 {
+    font-size: 35px;
+}
+.contactLinks li .anchor small {
+    font-size: 24px;
+    font-family: var(--heading-font);
+}
+
+form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.formField {
+    width: 100%;
+    gap: 15px;
+}
+form input, textarea {
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+    border-radius: 10px;
+    border: 1px solid var(--colorone);
+    background: var(--colorthree);
+    font-family: var(--heading-font);
+    color: var(--colorone);
+    letter-spacing: 1px;
+}
+form input:focus {
+    outline: none;
+}
+
+form textarea:focus {
+    outline: none;
+}
+
+button {
+    border: 0;
+    cursor: pointer;
+}
+
+/* End Contact */
+
+/* footer */
+
+footer {
+    width: 100%;
+    flex-direction: column;
+}
+
+footer .footersection {
+    flex-direction: column;
+    width: 100%;
+    padding: 100px 10px 80px;
+    text-align: center;
+    background: var(--colorfour);
+    gap: 20px;
+}
+
+footer .footersection h2 {
+    font-size: 70px;
+    line-height: 75px;
+}
+
+footer .footersection h3 {
+    font-size: 30px;
+}
+
+footer .footersection h2 span {
+    color: var(--colortwo);
+}
+
+footer ul {
+    list-style-type: none;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+footer ul li ion-icon.md.hydrated  {
+    font-size: 40px;
+}
+
+footer small {
+    padding: 20px 10px;
+    font-size: 18px;
+    font-family: var(--heading-font);
+}
+
+/* End footer */
