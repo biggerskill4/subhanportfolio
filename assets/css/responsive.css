@@ -1,0 +1,164 @@
+/* Large desktops (1600px and above) */
+@media (max-width: 1600px) {
+    :root {
+        --max-width: 100%;
+    }
+}
+
+/* Small desktops / laptops */
+@media (max-width: 1200px) {
+    .hero .bg-hero {
+        width: 30vw;
+    }
+
+    .hero h1 {
+        flex-wrap: wrap;
+        font-size: 120px;
+        line-height: 120px;
+    }
+}
+
+/* Tablets */
+@media (max-width: 992px) {
+    .hero h1 {
+        gap: 20px;
+    }
+
+    .side-content {
+        width: 80%;
+    }
+
+    header .logo {
+        width: 50%;
+    }
+
+    header .header-btn {
+        width: 50%;
+    }
+
+    header .menu {
+        display: none;
+    }
+
+    .side-btn {
+        bottom: 50px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .custom-cursor {
+        display: none;
+    }
+
+    .preloader .container {
+        flex-wrap: wrap;
+        gap: 50px;
+    }
+
+    .preloader .text-preloader {
+        width: 100%;
+        font-size: 24px;
+        font-weight: 400;
+    }
+
+    .preloader .percentage {
+        width: 100%;
+    }
+
+    .hero .bg-hero {
+        width: 50vw;
+    }
+
+    .side-content {
+        width: 100%;
+        left: 0;
+    }
+
+    .side-content h3 {
+        font-size: 24px;
+    }
+
+    .side-content p {
+        font-size: 18px;
+    }
+
+    .side-btn {
+        bottom: 90px;
+    }
+
+    .side-btn svg {
+        width: 150px;
+        height: 150px;
+    }
+
+    .side-btn text {
+        font-size: 19px;
+        fill: var(--text-color);
+    }
+
+    .side-btn img {
+        width: 70px;
+    }
+
+    .image-wrap {
+        height: 80vh;
+    }
+    .image-wrap img {
+        height: 180%;
+    }
+
+}
+
+@media (max-width: 500px) {
+
+    .cta {
+        font-size: 14px;
+        padding: 12px 15px;
+    }
+    .cta ion-icon.md.hydrated {
+        font-size: 16px;
+    }
+
+    .btn-caption {
+        height: 18px;
+    }
+
+    .preloader .text-preloader {
+        font-size: 20px;
+    }
+
+    .preloader .percentage {
+        font-size: 60px;
+        line-height: 60px;
+    }
+    header .logo img {
+        width: 170px;
+    }
+    .hero h1 {
+        font-size: 80px;
+        line-height: 60px;
+        letter-spacing: -1px;
+    }
+
+    .side-content h3 {
+        font-size: 20px;
+    }
+
+    .side-content p {
+        font-size: 16px;
+    }
+
+    .side-btn svg {
+        width: 120px;
+        height: 120px;
+    }
+
+    .image-wrap {
+        height: 80vh;
+    }
+    .image-wrap img {
+        height: 180%;
+    }
+
+}
