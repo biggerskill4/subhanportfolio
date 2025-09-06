@@ -223,7 +223,7 @@ gsap.to(".logo img", {
 
 gsap.to(".hero", {
   scale: 0.8,
-  filter: "blur(5px)",
+  y: "120%",
   opacity: 0.2,
   ease: "none",
   scrollTrigger: {
