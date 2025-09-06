@@ -209,7 +209,7 @@ function startHeroAnimation() {
 gsap.registerPlugin(ScrollTrigger);
 
 gsap.to(".logo img", {  
-  width: "150px",    
+  width: "140px",    
   transformOrigin: "center center",
   ease: "power1.out",
   scrollTrigger: {
@@ -222,7 +222,6 @@ gsap.to(".logo img", {
 
 
 gsap.to(".hero", {
-  y: "50%",
   scale: 0.8,
   filter: "blur(5px)",
   opacity: 0.2,

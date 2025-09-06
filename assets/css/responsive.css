@@ -115,9 +115,10 @@
     .cta {
         font-size: 14px;
         padding: 12px 15px;
+        gap: 5px;
     }
     .cta ion-icon.md.hydrated {
-        font-size: 16px;
+        font-size: 14px;
     }
 
     .btn-caption {
@@ -133,7 +134,7 @@
         line-height: 60px;
     }
     header .logo img {
-        width: 170px;
+        width: 140px;
     }
     .hero h1 {
         font-size: 80px;
