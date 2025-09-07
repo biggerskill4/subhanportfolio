@@ -22,6 +22,8 @@
 
     /* Max Width */
     --max-width: 1600px;
+    --padding-60: 60px 15px;
+    --padding-30: 30px 15px;
 }
 
 * {
@@ -33,6 +35,7 @@
 html,
 body {
     overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 ::selection {
@@ -73,6 +76,10 @@ h5,
 h6 {
     font-family: var(--heading-font);
     font-weight: 500;
+}
+
+p {
+    font-size: 22px;
 }
 
 /* Links */
@@ -165,9 +172,6 @@ button:hover,
     -webkit-background-clip: text;
 }
 
-
-
-
 .under-construction {
     padding: 30px 10px;
     width: 100%;
@@ -182,6 +186,7 @@ button:hover,
     padding: 30px;
     border-radius: 50px;
 }
+
 .under-construction h2 {
     font-size: 50px;
     text-align: center;
@@ -189,4 +194,16 @@ button:hover,
 
 .under-construction img {
     width: 300px;
+}
+
+@media (max-width: 1600px) {
+    :root {
+        --max-width: 100%;
+    }
+}
+
+@media (max-width: 500px) {
+    :root {
+       --padding-60: 30px 15px;
+    }
 }

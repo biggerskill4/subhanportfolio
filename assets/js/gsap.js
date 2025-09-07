@@ -42,8 +42,8 @@ cta.forEach((btn) => {
             }, 0);
         });
 
-    mm.add("(max-width: 500px)", () => {
-        // Mobile screens
+        mm.add("(max-width: 500px)", () => {
+            // Mobile screens
             tlText.to(letters, {
                 y: -19,
                 duration: 0.3,
@@ -94,9 +94,9 @@ const loaderSlides = preloader.querySelectorAll(".loader-slide");
 const textPreloader = document.querySelector(".text-preloader p");
 const percentage = document.querySelector(".percentage span");
 
-let tl = gsap.timeline({ defaults: { ease: "power2.out" } });
+let tlPreloader = gsap.timeline({ defaults: { ease: "power2.out" } });
 
-tl.to(loaderSlides, {
+tlPreloader.to(loaderSlides, {
     x: 0,
     duration: 1.5,
     delay: 0.5,
@@ -104,7 +104,7 @@ tl.to(loaderSlides, {
 });
 
 let count = { val: 0 };
-tl.to(count, {
+tlPreloader.to(count, {
     val: 100,
     duration: 2,
     ease: "linear",
@@ -113,14 +113,14 @@ tl.to(count, {
     }
 }, "-=2.5");
 
-tl.to([percentage, textPreloader], {
+tlPreloader.to([percentage, textPreloader], {
     y: "-100%",
     opacity: 0,
     duration: 0.5,
     ease: "power2.inOut"
 });
 
-tl.to(preloader, {
+tlPreloader.to(preloader, {
     scaleY: 0,
     transformOrigin: "top",
     ease: "expo.easeInOut",
@@ -128,7 +128,7 @@ tl.to(preloader, {
 });
 // preLoader end
 
-tl.add(startHeroAnimation);
+tlPreloader.add(startHeroAnimation);
 
 
 
@@ -139,6 +139,7 @@ function startHeroAnimation() {
     const heroTitle = document.querySelectorAll(".hero-content h1 span");
     const sideContent = document.querySelector(".side-content");
     const sideBtn = document.querySelector(".side-btn");
+    const imageWrap = document.querySelector(".image-wrap");
 
     let tlHero = gsap.timeline({ defaults: { ease: "expo.easeInOut" } });
 
@@ -149,7 +150,8 @@ function startHeroAnimation() {
     tlHero.to(cursorCircle, {
         opacity: 1,
         duration: 0.3,
-    });
+    }, "-0.3");
+
     tlHero.fromTo(heroTitle, {
         y: -150,
         opacity: 0,
@@ -180,7 +182,7 @@ function startHeroAnimation() {
         y: 0,
         opacity: 1,
         duration: 0.5
-    }, "-=0.5");
+    }, "-=0.6");
 
     tlHero.fromTo(sideContent, {
         y: 100,
@@ -189,7 +191,7 @@ function startHeroAnimation() {
         y: 0,
         opacity: 1,
         duration: 0.5
-    }, "-=0.5");
+    }, "-=0.6");
 
     tlHero.fromTo(sideBtn, {
         y: 100,
@@ -198,48 +200,83 @@ function startHeroAnimation() {
         y: 0,
         opacity: 1,
         duration: 0.5
-    }, "-=0.5");
+    }, "-=0.6");
+
+    tlHero.fromTo(imageWrap, {
+        y: 100,
+        opacity: 0,
+    }, {
+        y: 0,
+        opacity: 1,
+        duration: 0.5
+    }, "-=0.6");
 }
 
 // Hero end
 
 
 // Scrolltrigger
-
 gsap.registerPlugin(ScrollTrigger);
 
-gsap.to(".logo img", {  
-  width: "140px",    
-  transformOrigin: "center center",
-  ease: "power1.out",
-  scrollTrigger: {
-    trigger: "body",
-    start: "top top",
-    end: "200px top",
-    scrub: true
-  }
+const popup = document.getElementById("popupForm");
+const openBtns = document.querySelectorAll(".open-popup");
+const closeBtn = document.querySelector(".close-popup");
+
+// GSAP timeline (reusable)
+const tlPopup = gsap.timeline({ paused: true, defaults: { ease: "power2.out" } });
+
+tlPopup
+    .set(popup, { display: "flex" }) // pehle visible karo
+    .fromTo(".popup-content",
+        { autoAlpha: 0, y: 100 },
+        { autoAlpha: 1, y: 0, duration: 0.4 }
+    );
+
+// Open popup (for all buttons)
+openBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+        tlPopup.play(0); // reset and play
+    });
+});
+
+// Close popup (with GSAP reverse)
+closeBtn.addEventListener("click", () => {
+    tlPopup.reverse();
+});
+
+// Close on outside click
+window.addEventListener("click", (e) => {
+    if (e.target === popup) {
+        tlPopup.reverse();
+    }
 });
 
 
-gsap.to(".hero", {
-  scale: 0.8,
-  opacity: 0.2,
-  ease: "none",
-  scrollTrigger: {
-    trigger: ".image-wrap",
-    start: "top bottom",   
-    end: "bottom top",     
-    scrub: true
-  }
+gsap.to(".logo img", {
+    width: "140px",
+    transformOrigin: "center center",
+    ease: "power1.out",
+    scrollTrigger: {
+        trigger: "body",
+        start: "top top",
+        end: "200px top",
+        scrub: true
+    }
 });
+
 
 gsap.to(".image-wrap .container img", {
-  y: "-20%",
-  ease: "none",
-  scrollTrigger: {
-    trigger: ".image-wrap",
-    start: "top bottom",   
-    end: "bottom top",     
-    scrub: true
-  }
+    y: "-20%",
+    ease: "none",
+    scrollTrigger: {
+        trigger: ".image-wrap",
+        start: "top bottom",
+        end: "bottom top",
+        scrub: true
+    }
 });
+
+
+// Scrolling
+
+// Scrolling End

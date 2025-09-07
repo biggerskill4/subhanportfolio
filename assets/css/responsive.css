@@ -1,7 +1,22 @@
 /* Large desktops (1600px and above) */
 @media (max-width: 1600px) {
-    :root {
-        --max-width: 100%;
+    .about .container .col p {
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 1400px) {
+    .about .container .col p {
+        font-size: 30px;
+    }
+
+    .counter-box .counter {
+        font-size: 60px;
+        line-height: 60px;
+    }
+
+    .counter-box .label {
+        font-size: 26px;
     }
 }
 
@@ -15,6 +30,19 @@
         flex-wrap: wrap;
         font-size: 120px;
         line-height: 120px;
+    }
+
+    .about .container .col p {
+        font-size: 30px;
+    }
+
+    .counter-box .counter {
+        font-size: 60px;
+        line-height: 60px;
+    }
+
+    .counter-box .label {
+        font-size: 22px;
     }
 }
 
@@ -43,11 +71,17 @@
     .side-btn {
         bottom: 50px;
     }
+
+    .counter-section .container {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 /* Mobile */
 @media (max-width: 768px) {
-    .custom-cursor {
+
+    .custom-cursor,
+    .custom-cursor-circle {
         display: none;
     }
 
@@ -60,6 +94,10 @@
         width: 100%;
         font-size: 24px;
         font-weight: 400;
+    }
+
+    .preloader .text-preloader p {
+        font-size: 24px;
     }
 
     .preloader .percentage {
@@ -104,19 +142,50 @@
     .image-wrap {
         height: 80vh;
     }
+
     .image-wrap img {
         height: 180%;
     }
 
+    .about .container {
+        flex-direction: column;
+    }
+
+    .about .container .col p {
+        font-size: 30px;
+    }
+
+    .counter-box .counter {
+        font-size: 40px;
+        line-height: 40px;
+    }
+
+    .counter-box .label {
+        font-size: 20px;
+    }
+
+    .scrolling-text .rail h4 {
+        font-size: 40px;
+    }
 }
 
 @media (max-width: 500px) {
+
+    .popup-content {
+        width: 100%;
+        margin: 5px;
+    }
+
+    .popup-content h2 {
+        font-size: 30px;
+    }
 
     .cta {
         font-size: 14px;
         padding: 12px 15px;
         gap: 5px;
     }
+
     .cta ion-icon.md.hydrated {
         font-size: 14px;
     }
@@ -125,17 +194,29 @@
         height: 18px;
     }
 
-    .preloader .text-preloader {
+    .preloader .text-preloader p {
         font-size: 20px;
     }
 
     .preloader .percentage {
         font-size: 60px;
         line-height: 60px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        align-items: center;
+        justify-content: center;
     }
+
     header .logo img {
         width: 140px;
     }
+
+    .hero {
+        height: 90vh;
+    }
+
     .hero h1 {
         font-size: 80px;
         line-height: 60px;
@@ -143,11 +224,15 @@
     }
 
     .side-content h3 {
-        font-size: 20px;
+        font-size: 24px;
     }
 
     .side-content p {
-        font-size: 16px;
+        font-size: 20px;
+    }
+
+    .side-btn img {
+        width: 50px;
     }
 
     .side-btn svg {
@@ -156,10 +241,40 @@
     }
 
     .image-wrap {
-        height: 80vh;
+        height: 60vh;
     }
+
     .image-wrap img {
         height: 180%;
+    }
+
+    .about .container .col h3 {
+        font-size: 24px;
+    }
+
+    .about .container .col p {
+        font-size: 20px;
+    }
+
+    .counter-section .container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .counter-box {
+        padding: 30px 15px;
+    }
+
+    .counter-box .counter {
+        font-size: 30px;
+        line-height: 30px;
+    }
+
+    .counter-box .label {
+        font-size: 20px;
+    }
+
+    .scrolling-text .rail h4 {
+        font-size: 30px;
     }
 
 }

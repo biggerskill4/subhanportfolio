@@ -1,3 +1,80 @@
+/* Popup */
+.popup {
+  display: none; 
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.9);
+  backdrop-filter: blur(5px);
+  z-index: 1000;
+}
+
+
+.popup-content {
+    background: var(--bg);
+    border: 1px solid var(--primary-color);
+    padding: 30px;
+    border-radius: 12px;
+    max-width: 500px;
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content h2 { 
+    font-size: 40px;
+    text-align: center;
+}
+
+.popup form {
+    width: 100%;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.3rem;
+    font-size: 14px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 15px;
+    border-radius: 6px;
+    border: 0;
+    font-size: 14px;
+    color: #fff;
+    background: #131313;
+    font-family: var(--body-font);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: 0;
+}
+
+
+.close-popup {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+/* Popup End */
+
+
 /* Cursor */
 .custom-cursor {
     position: fixed;
@@ -47,7 +124,7 @@
     align-items: flex-start;
     z-index: 1;
     color: var(--text-color);
-    padding: 60px 10px;
+    padding: var(--padding-60);
     overflow-x: hidden;
 }
 
@@ -55,6 +132,10 @@
     width: 60%;
     font-size: 30px;
     overflow: hidden;
+}
+
+.preloader .text-preloader p {
+    font-size: 35px;
 }
 
 .preloader .percentage {
@@ -211,6 +292,7 @@ header .header-btn .toggle:active {
     height: 100vh;
     padding: 10px;
     z-index: 0;
+    position: relative;
 }
 
 .hero::before {
@@ -281,10 +363,13 @@ header .header-btn .toggle:active {
     width: 50%;
     opacity: 0;
     z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .side-content h3 {
-    font-size: 30px;
+    font-size: 35px;
     display: flex;
     align-items: center;
     color: var(--primary-color);
@@ -297,7 +382,7 @@ header .header-btn .toggle:active {
 }
 
 .side-content p {
-    font-size: 20px;
+    font-size: 22px;
 }
 
 .side-btn {
@@ -340,8 +425,9 @@ header .header-btn .toggle:active {
 
 .image-wrap {
     width: 100%;
-    padding: 60px 10px;
+    padding: var(--padding-60);
     height: 100vh;
+    opacity: 0;
 }
 
 .image-wrap .container {
@@ -358,3 +444,97 @@ header .header-btn .toggle:active {
 }
 
 /* Image Wrapper end */
+
+/* About */
+.about {
+    width: 100%;
+    padding: var(--padding-60);
+}
+
+.about .container {
+    width: var(--max-width);
+    align-items: flex-start;
+}
+
+.about .container .col {
+    width: 100%;
+    align-items: flex-start;
+}
+
+.about .container .col h3 {
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.about .container .col p {
+    font-size: 40px;
+}
+
+/* About End */
+
+/* Counter */
+
+.counter-section {
+    width: 100%;
+    padding: var(--padding-30);
+    padding-top: 0;
+}
+
+.counter-section .container {
+    width: var(--max-width);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.counter-box {
+    background: rgb(19, 19, 19);
+    padding: 60px 15px;
+    border-radius: 20px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.counter-box .counter {
+    font-family: var(--heading-font);
+    font-size: 80px;
+    line-height: 80px;
+    text-align: center;
+    color: var(--text-color);
+}
+
+.counter-box .label {
+    text-align: center;
+    font-size: 28px;
+}
+
+/* Counter End */
+
+/* scrolling */
+
+.scrolling-text {
+    overflow: hidden;
+    margin: 30px 0;
+    width: 100%;
+    padding: var(--padding-30);
+    display: flex;
+    align-items: center;
+    background: var(--gradient);
+
+    .rail {
+        display: flex;
+
+        h4 {
+            white-space: nowrap;
+            font-size: 60px;
+            letter-spacing: ls(120);
+            margin: 0 2rem 0 0;
+            color: var(--text-color);
+        }
+    }
+}
+
+/* scrolling end */

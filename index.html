@@ -22,6 +22,66 @@
 
 <body>
 
+    <!-- Popup Section -->
+    <section class="popup" id="popupForm">
+        <div class="popup-content">
+            <span class="close-popup">&times;</span>
+            <h2>Get in Touch</h2>
+            <form>
+                <div class="form-group">
+                    <input type="text" id="name" name="name" placeholder="Name" required>
+                </div>
+
+                <div class="form-group">
+                    <input type="email" id="email" name="email" placeholder="Email Address" required>
+                </div>
+
+                <div class="form-group">
+                    <input type="tel" id="phone" name="phone" placeholder="Phone Number">
+                </div>
+
+                <div class="form-group">
+                    <textarea id="message" name="message" rows="4" placeholder="Type your message"></textarea>
+                </div>
+
+                <button type="submit" class="cta">
+                    <div class="btn-caption">
+                        <div class="btn-text">
+                            <span>G</span>
+                            <span>e</span>
+                            <span>t</span>
+                            <span>&nbsp;</span>
+                            <span>S</span>
+                            <span>t</span>
+                            <span>a</span>
+                            <span>r</span>
+                            <span>t</span>
+                            <span>e</span>
+                            <span>d</span>
+                        </div>
+                        <div class="btn-text">
+                            <span>G</span>
+                            <span>e</span>
+                            <span>t</span>
+                            <span>&nbsp;</span>
+                            <span>S</span>
+                            <span>t</span>
+                            <span>a</span>
+                            <span>r</span>
+                            <span>t</span>
+                            <span>e</span>
+                            <span>d</span>
+                        </div>
+                    </div>
+                    <span class="arrow-wrap">
+                        <ion-icon name="arrow-forward" class="btn-arrow"></ion-icon>
+                        <ion-icon name="arrow-forward" class="btn-arrow"></ion-icon>
+                    </span>
+                </button>
+            </form>
+        </div>
+    </section>
+
     <!-- custom cursor -->
     <div class="custom-cursor"></div>
     <div class="custom-cursor-circle"></div>
@@ -62,7 +122,7 @@
                 </ul>
             </div>
             <div class="header-btn">
-                <a hre="#" class="cta">
+                <a hre="#" class="cta open-popup">
                     <div class="btn-caption">
                         <div class="btn-text">
                             <span>G</span>
@@ -103,7 +163,7 @@
 
 
     <!-- hero -->
-    <section class="hero flex-row">
+    <section class="hero flex-row" id="home">
         <span class="bg-hero"><img src="assets/images/hero-img.webp" alt="Image not found" class="globe"></span>
         <div class="container flex-row">
             <div class="hero-content flex-col">
@@ -126,7 +186,7 @@
                 </h1>
             </div>
             <div class="side-content">
-                <h3 class="gradient-text"><ion-icon name="ellipse"></ion-icon> Web Developer</h3>
+                <h3><ion-icon name="ellipse"></ion-icon> Web Developer</h3>
                 <p>Building fast, modern, and responsive web solutions.</p>
             </div>
 
@@ -155,10 +215,98 @@
     <!-- Image Parallex -->
     <section class="image-wrap flex-row">
         <div class="container flex-row">
-            <img src="./assets/images/luffy.jpg" alt="scroll image" />
+            <img src="./assets/images/luffy.webp" alt="scroll image" />
         </div>
     </section>
     <!-- Image Parallex end -->
+
+
+
+    <!-- About Me -->
+    <section class="about flex-row" id="about">
+        <div class="container flex-row">
+            <div class="col">
+                <h3><ion-icon name="finger-print"></ion-icon> About Me</h3>
+            </div>
+            <div class="col flex-col">
+                <p>A passionate web developer with expertise in PHP, HTML, CSS, JavaScript, WordPress, and Shopify.
+                    Focused on creating responsive, modern, and user-friendly websites.</p>
+                <a hre="#" class="cta open-popup">
+                    <div class="btn-caption">
+                        <div class="btn-text">
+                            <span>S</span>
+                            <span>a</span>
+                            <span>y</span>
+                            <span>&nbsp;</span>
+                            <span>H</span>
+                            <span>e</span>
+                            <span>l</span>
+                            <span>l</span>
+                            <span>o</span>
+                        </div>
+                        <div class="btn-text">
+                            <span>S</span>
+                            <span>a</span>
+                            <span>y</span>
+                            <span>&nbsp;</span>
+                            <span>H</span>
+                            <span>e</span>
+                            <span>l</span>
+                            <span>l</span>
+                            <span>o</span>
+                        </div>
+                    </div>
+                    <span class="arrow-wrap">
+                        <ion-icon name="arrow-forward" class="btn-arrow"></ion-icon>
+                        <ion-icon name="arrow-forward" class="btn-arrow"></ion-icon>
+                    </span>
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- About Me End -->
+
+    <!-- counter -->
+    <section class="counter-section flex-row">
+        <div class="container">
+            <div class="counter-box flex-col">
+                <div class="counter" data-target="3">3+</div>
+                <div class="label">Years Experience</div>
+            </div>
+            <div class="counter-box flex-col">
+                <div class="counter" data-target="50">50+</div>
+                <div class="label">Projects Completed</div>
+            </div>
+            <div class="counter-box flex-col">
+                <div class="counter" data-target="45">45+</div>
+                <div class="label">Happy Clients</div>
+            </div>
+            <div class="counter-box flex-col">
+                <div class="counter" data-target="10">10</div>
+                <div class="label">Technologies</div>
+            </div>
+        </div>
+    </section>
+    <!-- counter end -->
+
+    <!-- scrolling -->
+    <div class="scrolling-text">
+        <div class="rail">
+            <h4>Weblflow</h4>
+            <h4>Frontened</h4>
+            <h4>Wordpress</h4>
+            <h4>Shopify</h4>
+            <h4>CMS</h4>
+            <h4>PHP</h4>
+            <h4>JS</h4>
+            <h4>CSS</h4>
+        </div>
+    </div>
+    <!-- scrolling end -->
+
+    <!-- Horizontal Scroll -->
+
+
 
     <section class="under-construction flex-row">
         <div class="container flex-col">

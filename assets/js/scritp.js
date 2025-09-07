@@ -4,6 +4,7 @@ const lenis = new Lenis({
 });
 
 
+
 // header
 const navLinks = document.querySelectorAll("header .menu ul li a");
 
