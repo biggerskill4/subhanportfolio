@@ -342,6 +342,13 @@ header .header-btn .toggle:active {
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 40px;
+}
+
+.hero h1 .letters {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .hero h1 span {
@@ -418,7 +425,6 @@ header .header-btn .toggle:active {
     width: 100%;
     padding: var(--padding-60);
     height: 100vh;
-    opacity: 0;
 }
 
 .image-wrap .container {

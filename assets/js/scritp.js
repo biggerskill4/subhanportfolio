@@ -29,7 +29,7 @@ function splitText(selector) {
 }
 
 splitText(".btn-caption .btn-text");
-splitText(".hero-content h1");
+splitText(".hero-content h1 .letters");
 
 // Split Text End
 

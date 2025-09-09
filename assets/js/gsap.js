@@ -136,10 +136,9 @@ tlPreloader.add(startHeroAnimation);
 function startHeroAnimation() {
     const header = document.querySelectorAll("header");
     const bgHero = document.querySelectorAll(".bg-hero");
-    const heroTitle = document.querySelectorAll(".hero-content h1 span");
+    const heroTitle = document.querySelectorAll(".hero-content h1 .letters span");
     const sideContent = document.querySelector(".side-content");
     const sideBtn = document.querySelector(".side-btn");
-    const imageWrap = document.querySelector(".image-wrap");
 
     let tlHero = gsap.timeline({ defaults: { ease: "expo.easeInOut" } });
 
@@ -173,7 +172,7 @@ function startHeroAnimation() {
         duration: 0.5,
         left: "50%",
         top: "50%"
-    }, "-=0.5");
+    }, "-=1");
 
     tlHero.fromTo(header, {
         y: -100,
@@ -182,7 +181,7 @@ function startHeroAnimation() {
         y: 0,
         opacity: 1,
         duration: 0.5
-    }, "-=0.6");
+    }, "-=1");
 
     tlHero.fromTo(sideContent, {
         y: 100,
@@ -191,7 +190,7 @@ function startHeroAnimation() {
         y: 0,
         opacity: 1,
         duration: 0.5
-    }, "-=0.6");
+    }, "-=1");
 
     tlHero.fromTo(sideBtn, {
         y: 100,
@@ -200,16 +199,7 @@ function startHeroAnimation() {
         y: 0,
         opacity: 1,
         duration: 0.5
-    }, "-=0.6");
-
-    tlHero.fromTo(imageWrap, {
-        y: 100,
-        opacity: 0,
-    }, {
-        y: 0,
-        opacity: 1,
-        duration: 0.5
-    }, "-=0.6");
+    }, "-=1");
 }
 
 // Hero end
@@ -218,65 +208,103 @@ function startHeroAnimation() {
 // Scrolltrigger
 gsap.registerPlugin(ScrollTrigger);
 
-const popup = document.getElementById("popupForm");
-const openBtns = document.querySelectorAll(".open-popup");
-const closeBtn = document.querySelector(".close-popup");
+// Section Scroll Animations
+function initSectionAnimations() {
 
-// GSAP timeline (reusable)
-const tlPopup = gsap.timeline({ paused: true, defaults: { ease: "power2.out" } });
-
-tlPopup
-    .set(popup, { display: "flex" }) // pehle visible karo
-    .fromTo(".popup-content",
-        { autoAlpha: 0, y: 100 },
-        { autoAlpha: 1, y: 0, duration: 0.4 }
-    );
-
-// Open popup (for all buttons)
-openBtns.forEach(btn => {
-    btn.addEventListener("click", () => {
-        tlPopup.play(0); // reset and play
+    gsap.to(".logo img", {
+        width: "140px",
+        transformOrigin: "center center",
+        ease: "power1.out",
+        scrollTrigger: {
+            trigger: "body",
+            start: "top top",
+            end: "200px top",
+            scrub: true
+        }
     });
+
+
+    gsap.to(".image-wrap .container img", {
+        y: "-20%",
+        ease: "none",
+        scrollTrigger: {
+            trigger: ".image-wrap",
+            start: "top bottom",
+            end: "bottom top",
+            scrub: true
+        }
+    });
+
+
+    // About Section
+    const tlAbout = gsap.timeline({
+        scrollTrigger: {
+            trigger: ".about",
+            start: "top 85%",
+            end: "center center",
+            toggleActions: "play none none reverse",
+        }
+    });
+
+    tlAbout
+        .from(".about h3", {
+            y: 100,
+            opacity: 0,
+            duration: 0.6
+        })
+        .from(".about p", {
+            y: 100,
+            opacity: 0,
+            duration: 1
+        }, "-=0.6")
+        .from(".about .btn", {
+            y: 60,
+            opacity: 0,
+            duration: 1
+        }, "-=0.6");
+
+    // Counter Section
+    const counters = document.querySelectorAll(".counter");
+
+    gsap.from(".counter-section", {
+        scrollTrigger: {
+            trigger: ".counter-section",
+            start: "top 90%",
+            end: "bottom top",
+            toggleActions: "play none none reverse",
+        },
+        duration: 1,
+        opacity: 0,
+        y: 50
+    })
+
+    counters.forEach(counter => {
+        const target = +counter.getAttribute("data-target");
+        let countObj = { val: 0 };
+
+        gsap.to(countObj, {
+            val: target,
+            duration: 3,
+            ease: "power1.out",
+            scrollTrigger: {
+                trigger: counter,
+                start: "top 95%",
+                end: "bottom top",
+                toggleActions: "play none none reverse",
+                markers: true
+            },
+            onUpdate: () => {
+                counter.innerHTML =
+                    Math.floor(countObj.val) +
+                    (counter.querySelector("span") ? "<span>+</span>" : "");
+            }
+        });
+    });
+
+};
+
+// Initialize animations
+window.addEventListener("load", () => {
+    initSectionAnimations();
+    ScrollTrigger.refresh();
 });
-
-// Close popup (with GSAP reverse)
-closeBtn.addEventListener("click", () => {
-    tlPopup.reverse();
-});
-
-// Close on outside click
-window.addEventListener("click", (e) => {
-    if (e.target === popup) {
-        tlPopup.reverse();
-    }
-});
-
-
-gsap.to(".logo img", {
-    width: "140px",
-    transformOrigin: "center center",
-    ease: "power1.out",
-    scrollTrigger: {
-        trigger: "body",
-        start: "top top",
-        end: "200px top",
-        scrub: true
-    }
-});
-
-
-gsap.to(".image-wrap .container img", {
-    y: "-20%",
-    ease: "none",
-    scrollTrigger: {
-        trigger: ".image-wrap",
-        start: "top bottom",
-        end: "bottom top",
-        scrub: true
-    }
-});
-
-
-// Scrolling
-
-// Scrolling End

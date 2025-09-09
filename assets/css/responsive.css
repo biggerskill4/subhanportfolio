@@ -48,10 +48,6 @@
 
 /* Tablets */
 @media (max-width: 992px) {
-    .hero h1 {
-        gap: 20px;
-    }
-
     .side-content {
         width: 80%;
     }
@@ -66,6 +62,10 @@
 
     header .menu {
         display: none;
+    }
+
+    .hero h1 {
+        gap: 20px;
     }
 
     .side-btn {
@@ -98,6 +98,7 @@
 
     .preloader .text-preloader p {
         font-size: 24px;
+        display: none;
     }
 
     .preloader .percentage {
