@@ -54,7 +54,7 @@
     border: 0;
     font-size: 14px;
     color: #fff;
-    background: #131313;
+    background: var(--secondary-color);
     font-family: var(--body-font);
 }
 
@@ -158,11 +158,11 @@
 }
 
 .preloader .loader-slide:nth-child(1) {
-    background: var(--secondary-color);
+    /* background: var(--secondary-color); */
 }
 
 .preloader .loader-slide:nth-child(2) {
-    background: var(--gradient);
+    /* background: var(--primary-color); */
 }
 
 /* preloader end */
@@ -213,7 +213,6 @@ header .menu ul {
     gap: 30px;
     padding: 15px 20px;
     background: #242424;
-    background: var(--gradient);
     border-radius: 50px;
 }
 
@@ -242,7 +241,7 @@ header .menu ul li a {
 }
 
 header .menu ul li a:hover {
-    color: var(--white-color);
+    color: var(--primary-color);
 }
 
 header .header-btn {
@@ -343,13 +342,6 @@ header .header-btn .toggle:active {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 50px;
-}
-
-.hero h1 .word {
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .hero h1 span {
@@ -372,7 +364,6 @@ header .header-btn .toggle:active {
     font-size: 35px;
     display: flex;
     align-items: center;
-    color: var(--primary-color);
     width: fit-content;
     gap: 10px;
 }
@@ -506,6 +497,10 @@ header .header-btn .toggle:active {
     color: var(--text-color);
 }
 
+.counter-box .counter span {
+    color: var(--primary-color);
+}
+
 .counter-box .label {
     text-align: center;
     font-size: 28px;
@@ -522,7 +517,7 @@ header .header-btn .toggle:active {
     padding: var(--padding-30);
     display: flex;
     align-items: center;
-    background: var(--gradient);
+    background: var(--primary-color);
 
     .rail {
         display: flex;

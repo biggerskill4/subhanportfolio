@@ -3,10 +3,9 @@
 
 :root {
     --primary-color: #00a9f2;
-    --secondary-color: #b946fc;
+    --secondary-color: #131313;
     --text-color: #ffffff;
     --bg: #0B0B0B;
-    --gradient: linear-gradient(90deg, #00a9f2 0%, #b946fc 100%);
     /* Accent */
     --accent-color: transparent;
     --accent-hover: transparent;
@@ -54,7 +53,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: linear-gradient(180deg, #00a9f2 0%, #b946fc 100%);
+    background: var(--primary-color);
     border-radius: 50px;
 }
 
@@ -99,9 +98,9 @@ button,
     border: none;
     padding: 15px 20px;
     border-radius: 50px;
-    background: var(--gradient);
+    background: transparent;
     color: var(--accent-text-color);
-    /* border: 1px solid var(--accent-text-color); */
+    border: 1px solid var(--accent-text-color);
     transition: all 0.3s;
     cursor: pointer;
     font-size: 18px;
@@ -165,12 +164,6 @@ button:hover,
     gap: 20px;
 }
 
-.gradient-text {
-    color: transparent !important;
-    background: var(--gradient);
-    background-clip: text;
-    -webkit-background-clip: text;
-}
 
 .under-construction {
     padding: 30px 10px;
@@ -182,7 +175,7 @@ button:hover,
     justify-content: center;
     align-items: center;
     gap: 50px;
-    background: var(--gradient);
+    background: var(--primary-color);
     padding: 30px;
     border-radius: 50px;
 }

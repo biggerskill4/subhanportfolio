@@ -6,7 +6,6 @@ Hi! I'm **Subhan Ahmed**, a professional WordPress developer with expertise in d
 
 I specialize in:
 - WordPress theme development
-- Custom plugin development
 - Responsive web design
 - Website maintenance and optimization
 

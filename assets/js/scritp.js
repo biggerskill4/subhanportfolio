@@ -9,10 +9,29 @@ const lenis = new Lenis({
 const navLinks = document.querySelectorAll("header .menu ul li a");
 
 navLinks.forEach(link => {
-   const data = link.getAttribute("data-text");
-   link.innerHTML = `<span>${data}</span><span>${data}</span>`;
+  const data = link.getAttribute("data-text");
+  link.innerHTML = `<span>${data}</span><span>${data}</span>`;
 });
 // header end
+
+
+// Split Text
+function splitText(selector) {
+  const elements = document.querySelectorAll(selector);
+
+  elements.forEach(el => {
+    const content = el.textContent.trim();
+    el.innerHTML = content
+      .split("")
+      .map(letter => `<span>${letter === " " ? "&nbsp;" : letter}</span>`)
+      .join("");
+  });
+}
+
+splitText(".btn-caption .btn-text");
+splitText(".hero-content h1");
+
+// Split Text End
 
 
 
