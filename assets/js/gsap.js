@@ -1,3 +1,6 @@
+// Scrolltrigger
+gsap.registerPlugin(ScrollTrigger);
+
 // Cursor
 const cursor = document.querySelector(".custom-cursor");
 const cursorCircle = document.querySelector(".custom-cursor-circle");
@@ -21,6 +24,39 @@ window.addEventListener("mousemove", (e) => {
 });
 
 
+// All links Cursor Hover Effect
+const links = document.querySelectorAll("a, button, .cta");
+
+links.forEach(link => {
+    link.addEventListener("mouseenter", () => {
+        gsap.to(cursor, {
+            opacity: 0,
+            duration: 0.3,
+            ease: "power2.out"
+        });
+        gsap.to(cursorCircle, {
+            scale: 5,
+            backgroundColor: "#FFFFFF",
+            duration: 0.3,
+            ease: "power2.out"
+        });
+    });
+
+    link.addEventListener("mouseleave", () => {
+        gsap.to(cursor, {
+            opacity: 1,
+            duration: 0.3,
+            ease: "power2.out"
+        });
+        gsap.to(cursorCircle, {
+            scale: 1,
+            backgroundColor: "#00a9f2",
+            duration: 0.3,
+            ease: "power2.out"
+        });
+    });
+});
+
 // My Button gsap
 const cta = document.querySelectorAll(".cta");
 
@@ -35,7 +71,7 @@ cta.forEach((btn) => {
         const letters = text.querySelectorAll("span");
         mm.add("(min-width: 501px)", () => {
             tlText.to(letters, {
-                y: -23,
+                y: -22,
                 duration: 0.3,
                 stagger: 0.025,
                 ease: "power2.out"
@@ -45,7 +81,7 @@ cta.forEach((btn) => {
         mm.add("(max-width: 500px)", () => {
             // Mobile screens
             tlText.to(letters, {
-                y: -19,
+                y: -18,
                 duration: 0.3,
                 stagger: 0.025,
                 ease: "power2.out"
@@ -57,8 +93,8 @@ cta.forEach((btn) => {
     const arrow = btn.querySelectorAll(".btn-arrow");
     const tlArrow = gsap.timeline({ paused: true });
     tlArrow.to(arrow, {
-        x: 20,
-        y: -20,
+        x: 30,
+        y: -30,
         rotate: -45,
         opacity: 1,
         duration: 0.2,
@@ -85,6 +121,30 @@ gsap.to(ctaTwo, {
 });
 
 // My Button gsap end
+
+// scroll
+  const rail = document.querySelector(".rail");
+  rail.innerHTML += rail.innerHTML; // duplicate for loop
+
+  // Normal marquee
+  const marquee = gsap.to(".rail", {
+    xPercent: -50,
+    repeat: -1,
+    duration: 15,
+    ease: "linear"
+  });
+
+  let scrollTimeout;
+
+  // Jab user scroll kare
+  window.addEventListener("scroll", () => {
+    gsap.to(marquee, { timeScale: 3, duration: 0.3 }); // tez ho jae
+
+    clearTimeout(scrollTimeout);
+    scrollTimeout = setTimeout(() => {
+      gsap.to(marquee, { timeScale: 1, duration: 1 }); // normal speed wapas
+    }, 200); // 200ms ke andar scroll ruk jaye to reset
+  });
 
 
 // Animation/
@@ -205,23 +265,8 @@ function startHeroAnimation() {
 // Hero end
 
 
-// Scrolltrigger
-gsap.registerPlugin(ScrollTrigger);
-
 // Section Scroll Animations
 function initSectionAnimations() {
-
-    gsap.to(".logo img", {
-        width: "140px",
-        transformOrigin: "center center",
-        ease: "power1.out",
-        scrollTrigger: {
-            trigger: "body",
-            start: "top top",
-            end: "200px top",
-            scrub: true
-        }
-    });
 
 
     gsap.to(".image-wrap .container img", {
@@ -291,7 +336,6 @@ function initSectionAnimations() {
                 start: "top 95%",
                 end: "bottom top",
                 toggleActions: "play none none reverse",
-                markers: true
             },
             onUpdate: () => {
                 counter.innerHTML =

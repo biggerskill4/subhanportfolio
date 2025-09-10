@@ -5,7 +5,12 @@
     }
 }
 
+/* laptops */
 @media (max-width: 1400px) {
+    .hero h1 {
+        font-size: 120px;
+        line-height: 120px;
+    }
     .about .container .col p {
         font-size: 30px;
     }
@@ -20,7 +25,7 @@
     }
 }
 
-/* Small desktops / laptops */
+/* Small desktops */
 @media (max-width: 1200px) {
     .hero .bg-hero {
         width: 30vw;
@@ -28,8 +33,8 @@
 
     .hero h1 {
         flex-wrap: wrap;
-        font-size: 120px;
-        line-height: 120px;
+        font-size: 100px;
+        line-height: 100px;
     }
 
     .about .container .col p {
@@ -183,12 +188,13 @@
 
     .cta {
         font-size: 14px;
-        padding: 12px 15px;
+        padding: 8px 5px 8px 15px;
         gap: 5px;
     }
 
     .cta ion-icon.md.hydrated {
         font-size: 14px;
+        padding: 5px;
     }
 
     .btn-caption {
@@ -196,7 +202,7 @@
     }
 
     .preloader .text-preloader p {
-        font-size: 20px;
+        font-size: 18px;
     }
 
     .preloader .percentage {
@@ -211,7 +217,7 @@
     }
 
     header .logo img {
-        width: 140px;
+        width: 60px;
     }
 
     .hero {
@@ -219,8 +225,8 @@
     }
 
     .hero h1 {
-        font-size: 80px;
-        line-height: 60px;
+        font-size: 60px;
+        line-height: 50px;
         letter-spacing: -1px;
     }
 
@@ -229,9 +235,11 @@
     }
 
     .side-content p {
-        font-size: 20px;
+        font-size: 18px;
     }
-
+    .side-btn {
+        display: none;
+    }
     .side-btn img {
         width: 50px;
     }
@@ -254,7 +262,7 @@
     }
 
     .about .container .col p {
-        font-size: 20px;
+        font-size: 18px;
     }
 
     .counter-section .container {

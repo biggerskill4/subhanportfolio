@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Righteous&display=swap');
 
+@font-face {
+  font-family: "Grand Slang";
+  src: url("../fonts/GrandSlang/GrandSlang-Roman.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
 
 :root {
     --primary-color: #00a9f2;
@@ -7,22 +14,22 @@
     --text-color: #ffffff;
     --bg: #0B0B0B;
     /* Accent */
-    --accent-color: transparent;
-    --accent-hover: transparent;
-    --accent-text-color: #ffffff;
+    --accent-color: #ffffff;
+    --accent-hover: #ffffff;
+    --accent-text-color: #000000;
     --accent-text-hover: #000000;
     /* Base Colors */
     --white-color: #ffffff;
     --black-color: #000000;
 
     /* Fonts */
-    --heading-font: 'Righteous', sans-serif;
+    --heading-font: 'Grand Slang', sans-serif;
     --body-font: 'Funnel Display', sans-serif;
 
     /* Max Width */
     --max-width: 1600px;
-    --padding-60: 60px 15px;
-    --padding-30: 30px 15px;
+    --padding-large: 80px 15px;
+    --padding-small: 30px 15px;
 }
 
 * {
@@ -96,9 +103,9 @@ a:hover {
 button,
 .cta {
     border: none;
-    padding: 15px 20px;
+    padding: 8px 10px 8px 20px;
     border-radius: 50px;
-    background: transparent;
+    background: var(--accent-color);
     color: var(--accent-text-color);
     border: 1px solid var(--accent-text-color);
     transition: all 0.3s;
@@ -117,12 +124,12 @@ button,
 
 button:hover,
 .cta:hover {
-    /* background: var(--accent-hover); */
-    color: var(--accent-text);
+    background: var(--accent-hover);
+    color: var(--accent-text-color);
 }
 
 .btn-caption {
-    height: 23px;
+    height: 22px;
     overflow: hidden;
 }
 
@@ -131,22 +138,26 @@ button:hover,
 }
 
 
-.cta ion-icon.md.hydrated {
-    transform: rotate(-45deg);
-    transition: 0.3s;
-    font-size: 20px;
-}
-
 .cta .arrow-wrap {
     display: flex;
     position: relative;
     overflow: hidden;
+    background: var(--black-color);
+    border-radius: 50%;
+    color: var(--accent-color);
+}
+
+.cta ion-icon.md.hydrated {
+    transform: rotate(-45deg);
+    transition: 0.3s;
+    font-size: 20px;
+    padding: 8px;
 }
 
 .cta .arrow-wrap .btn-arrow:last-child {
     position: absolute;
-    left: -20px;
-    top: 20px;
+    left: -30px;
+    top: 30px;
 }
 
 .flex-row {
@@ -169,6 +180,40 @@ button:hover,
     padding: 30px 10px;
     width: 100%;
 }
+
+
+/* Cursor */
+.custom-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 30px;
+    height: 30px;
+    border: 1px solid var(--white-color);
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    opacity: 0;
+}
+
+.custom-cursor-circle {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: var(--primary-color);
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    border-radius: 100px;
+    z-index: 9999;
+    opacity: 0;
+    mix-blend-mode: difference;
+}
+
+/* Cursor End */
+
 
 .under-construction .container {
     width: var(--max-width);
@@ -197,6 +242,7 @@ button:hover,
 
 @media (max-width: 500px) {
     :root {
-       --padding-60: 30px 15px;
+       --padding-large: 30px 15px;
     }
 }
+
