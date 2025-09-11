@@ -188,7 +188,7 @@
 
     .cta {
         font-size: 14px;
-        padding: 8px 5px 8px 15px;
+        padding: 8px 5px 8px 10px;
         gap: 5px;
     }
 
@@ -266,7 +266,8 @@
     }
 
     .counter-section .container {
-        grid-template-columns: repeat(1, 1fr);
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
     }
 
     .counter-box {
@@ -279,7 +280,7 @@
     }
 
     .counter-box .label {
-        font-size: 20px;
+        font-size: 16px;
     }
 
     .scrolling-text .rail h4 {

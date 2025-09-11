@@ -103,14 +103,13 @@ a:hover {
 button,
 .cta {
     border: none;
-    padding: 8px 10px 8px 20px;
+    padding: 10px 10px 10px 15px;
     border-radius: 50px;
     background: var(--accent-color);
     color: var(--accent-text-color);
-    border: 1px solid var(--accent-text-color);
     transition: all 0.3s;
     cursor: pointer;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 500;
     font-family: var(--body-font);
     display: flex;
@@ -129,7 +128,7 @@ button:hover,
 }
 
 .btn-caption {
-    height: 22px;
+    height: 21px;
     overflow: hidden;
 }
 
@@ -151,7 +150,7 @@ button:hover,
     transform: rotate(-45deg);
     transition: 0.3s;
     font-size: 20px;
-    padding: 8px;
+    padding: 5px;
 }
 
 .cta .arrow-wrap .btn-arrow:last-child {

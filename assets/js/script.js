@@ -1,8 +1,22 @@
-// Initialize Lenis
+// Lenis setup
 const lenis = new Lenis({
-  autoRaf: true,
+  smooth: true,
+  lerp: 0.1
 });
 
+function raf(time) {
+  lenis.raf(time);
+  requestAnimationFrame(raf);
+}
+requestAnimationFrame(raf);
+
+// page reload -> always top
+window.onbeforeunload = function () {
+  lenis.scrollTo(0, { immediate: true });
+};
+
+lenis.stop();
+document.documentElement.style.overflow = "hidden";
 
 
 // header

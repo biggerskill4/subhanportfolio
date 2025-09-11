@@ -178,7 +178,7 @@ header .menu ul {
     justify-content: space-between;
     align-items: center;
     gap: 30px;
-    padding: 20px 30px;
+    padding: 15px 30px;
     background: #242424;
     border-radius: 50px;
 }
@@ -497,7 +497,7 @@ header .header-btn .toggle:active {
 
         h4 {
             white-space: nowrap;
-            font-size: 60px;
+            font-size: 40px;
             letter-spacing: ls(120);
             margin: 0 2rem 0 0;
             color: var(--text-color);

@@ -71,7 +71,7 @@ cta.forEach((btn) => {
         const letters = text.querySelectorAll("span");
         mm.add("(min-width: 501px)", () => {
             tlText.to(letters, {
-                y: -22,
+                y: -21,
                 duration: 0.3,
                 stagger: 0.025,
                 ease: "power2.out"
@@ -123,28 +123,28 @@ gsap.to(ctaTwo, {
 // My Button gsap end
 
 // scroll
-  const rail = document.querySelector(".rail");
-  rail.innerHTML += rail.innerHTML; // duplicate for loop
+const rail = document.querySelector(".rail");
+rail.innerHTML += rail.innerHTML; // duplicate for loop
 
-  // Normal marquee
-  const marquee = gsap.to(".rail", {
+// Normal marquee
+const marquee = gsap.to(".rail", {
     xPercent: -50,
     repeat: -1,
     duration: 15,
     ease: "linear"
-  });
+});
 
-  let scrollTimeout;
+let scrollTimeout;
 
-  // Jab user scroll kare
-  window.addEventListener("scroll", () => {
-    gsap.to(marquee, { timeScale: 3, duration: 0.3 }); // tez ho jae
+// Jab user scroll kare
+window.addEventListener("scroll", () => {
+    gsap.to(marquee, { timeScale: 3, duration: 0.3 });
 
     clearTimeout(scrollTimeout);
     scrollTimeout = setTimeout(() => {
-      gsap.to(marquee, { timeScale: 1, duration: 1 }); // normal speed wapas
-    }, 200); // 200ms ke andar scroll ruk jaye to reset
-  });
+        gsap.to(marquee, { timeScale: 1, duration: 0.5 });
+    }, 200);
+});
 
 
 // Animation/
@@ -154,7 +154,14 @@ const loaderSlides = preloader.querySelectorAll(".loader-slide");
 const textPreloader = document.querySelector(".text-preloader p");
 const percentage = document.querySelector(".percentage span");
 
-let tlPreloader = gsap.timeline({ defaults: { ease: "power2.out" } });
+let tlPreloader = gsap.timeline({
+    defaults: { ease: "power2.out" },
+    onComplete: () => {
+        lenis.start();
+        document.documentElement.style.overflow = "";
+        startHeroAnimation();
+    }
+});
 
 tlPreloader.to(loaderSlides, {
     x: 0,
@@ -187,8 +194,6 @@ tlPreloader.to(preloader, {
     duration: 0.5
 });
 // preLoader end
-
-tlPreloader.add(startHeroAnimation);
 
 
 
@@ -263,8 +268,6 @@ function startHeroAnimation() {
 }
 
 // Hero end
-
-
 // Section Scroll Animations
 function initSectionAnimations() {
 
@@ -311,7 +314,7 @@ function initSectionAnimations() {
     // Counter Section
     const counters = document.querySelectorAll(".counter");
 
-    gsap.from(".counter-section", {
+    gsap.from(".counter-box", {
         scrollTrigger: {
             trigger: ".counter-section",
             start: "top 90%",
