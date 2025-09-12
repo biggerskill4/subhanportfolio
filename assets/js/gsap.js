@@ -1,7 +1,9 @@
 // Scrolltrigger
 gsap.registerPlugin(ScrollTrigger);
 
+// ==========================
 // Cursor
+// ==========================
 const cursor = document.querySelector(".custom-cursor");
 const cursorCircle = document.querySelector(".custom-cursor-circle");
 
@@ -57,7 +59,10 @@ links.forEach(link => {
     });
 });
 
-// My Button gsap
+
+// ==========================
+// Button Hover Effect
+// =========================
 const cta = document.querySelectorAll(".cta");
 
 cta.forEach((btn) => {
@@ -122,7 +127,33 @@ gsap.to(ctaTwo, {
 
 // My Button gsap end
 
-// scroll
+// ==========================
+// Scroll to Top
+// =========================
+const backToTopBtn = document.querySelector(".backToTop");
+backToTopBtn.addEventListener("mouseenter", () => {
+    gsap.to(".backToTop ion-icon.md.hydrated", {
+        y: -19,
+        duration: 0.3,
+        ease: "power2.out"
+    });
+});
+backToTopBtn.addEventListener("mouseleave", () => {
+    gsap.to(".backToTop ion-icon.md.hydrated", {
+        y: 18,
+        duration: 0.3,
+        ease: "power2.out"
+    });
+});
+   
+backToTopBtn.addEventListener("click", () => {
+    lenis.scrollTo(0, { duration: 1 });
+});
+
+
+// ==========================
+// Marquee Animation
+// =========================
 const rail = document.querySelector(".rail");
 rail.innerHTML += rail.innerHTML; // duplicate for loop
 
@@ -146,9 +177,9 @@ window.addEventListener("scroll", () => {
     }, 200);
 });
 
-
-// Animation/
-// preloader
+// ==========================
+// Preloader Animation
+// =========================
 const preloader = document.querySelector(".preloader");
 const loaderSlides = preloader.querySelectorAll(".loader-slide");
 const textPreloader = document.querySelector(".text-preloader p");
@@ -197,7 +228,9 @@ tlPreloader.to(preloader, {
 
 
 
-// Hero
+// ==========================
+// Hero Animation
+// =========================
 function startHeroAnimation() {
     const header = document.querySelectorAll("header");
     const bgHero = document.querySelectorAll(".bg-hero");
@@ -268,7 +301,11 @@ function startHeroAnimation() {
 }
 
 // Hero end
-// Section Scroll Animations
+
+
+// ==========================
+// Section Animations
+// =========================
 function initSectionAnimations() {
 
 
@@ -311,19 +348,38 @@ function initSectionAnimations() {
             duration: 1
         }, "-=0.6");
 
+
+    // Split paragraph into lines
+    const splitAbout = new SplitType(".about p", { types: "lines" });
+
+    gsap.to(splitAbout.lines, {
+        backgroundPosition: "0% 0",
+        ease: "power2.out",
+        stagger: 0.5,
+        scrollTrigger: {
+            trigger: ".about",
+            start: "top 85%",
+            end: "bottom 60%",
+            scrub: 1
+        }
+    });
+
+
+
     // Counter Section
     const counters = document.querySelectorAll(".counter");
 
-    gsap.from(".counter-box", {
+    gsap.from(".counter-section", {
         scrollTrigger: {
             trigger: ".counter-section",
             start: "top 90%",
-            end: "bottom top",
+            end: "bottom center",
             toggleActions: "play none none reverse",
         },
-        duration: 1,
+        duration: 1.5,
         opacity: 0,
-        y: 50
+        scale: 1.2,
+        ease: "power2.out"
     })
 
     counters.forEach(counter => {

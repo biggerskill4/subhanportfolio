@@ -139,7 +139,7 @@
 header {
     width: 100%;
     padding: 5px 10px;
-    position: fixed;
+    position: absolute;
     z-index: 999;
     opacity: 0;
 }
@@ -219,35 +219,6 @@ header .header-btn {
     gap: 15px;
 }
 
-header .header-btn .toggle {
-    background: var(--accent-color);
-    color: var(--accent-text-color);
-    width: 35px;
-    height: 35px;
-    border-radius: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    cursor: pointer;
-    transition: all 0.3s;
-    backdrop-filter: blur(20px);
-}
-
-header .header-btn .toggle .iconChange {
-    transition: all 0.3s;
-    font-size: 24px;
-    border-radius: 50px;
-}
-
-header .header-btn .toggle .iconChange:hover {
-    transform: scale(1.1);
-}
-
-header .header-btn .toggle:active {
-    background: var(--accent-text-color);
-    color: var(--accent-text-hover);
-}
 
 /* header end */
 
@@ -434,6 +405,16 @@ header .header-btn .toggle:active {
 
 .about .container .col p {
     font-size: 40px;
+    color: transparent;
+}
+
+.about p .line {
+  display: block;
+  background: linear-gradient(90deg, var(--white-color) 0%, #9b9b9b  50%, #4e4e4e 50%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 100%;
+  background-position: 100% 0;
 }
 
 /* About End */
