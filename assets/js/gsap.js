@@ -130,25 +130,7 @@ gsap.to(ctaTwo, {
 // ==========================
 // Scroll to Top
 // =========================
-const backToTopBtn = document.querySelector(".backToTop");
-backToTopBtn.addEventListener("mouseenter", () => {
-    gsap.to(".backToTop ion-icon.md.hydrated", {
-        y: -19,
-        duration: 0.3,
-        ease: "power2.out"
-    });
-});
-backToTopBtn.addEventListener("mouseleave", () => {
-    gsap.to(".backToTop ion-icon.md.hydrated", {
-        y: 18,
-        duration: 0.3,
-        ease: "power2.out"
-    });
-});
-   
-backToTopBtn.addEventListener("click", () => {
-    lenis.scrollTo(0, { duration: 1 });
-});
+
 
 
 // ==========================
