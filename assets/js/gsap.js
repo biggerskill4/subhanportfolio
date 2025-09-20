@@ -27,7 +27,7 @@ window.addEventListener("mousemove", (e) => {
 
 
 // All links Cursor Hover Effect
-const links = document.querySelectorAll("a, button, .cta");
+const links = document.querySelectorAll("a, button, .cta, .project");
 
 links.forEach(link => {
     link.addEventListener("mouseenter", () => {
@@ -126,6 +126,62 @@ gsap.to(ctaTwo, {
 });
 
 // My Button gsap end
+
+// ==========================
+// Popup
+// =========================
+const popup = document.getElementById("popup");
+const popupForm = document.querySelector(".popup-content");
+const closePopup = document.querySelector(".close-popup");
+const openBtn = document.querySelectorAll(".open-popup");
+
+// Default hide
+gsap.set(popup, { autoAlpha: 0 });
+gsap.set(popupForm, { y: 50, autoAlpha: 0 });
+
+// Open popup
+openBtn.forEach(btn => {
+  btn.addEventListener("click", () => {
+    gsap.to(popup, {
+      autoAlpha: 1,
+      duration: 0.4,
+      ease: "power3.out"
+    });
+    gsap.fromTo(
+      popupForm,
+      { y: 50, autoAlpha: 0 },
+      { y: 0, autoAlpha: 1, duration: 0.5, ease: "power3.out" }
+    );
+  });
+});
+
+// Close popup
+function closePopupAnim() {
+  gsap.to(popupForm, {
+    y: -50,
+    autoAlpha: 0,
+    duration: 0.4,
+    ease: "power3.in",
+    onComplete: () => {
+      gsap.set(popupForm, { y: 50, autoAlpha: 0 }); // reset neeche se entry ke liye
+    }
+  });
+  gsap.to(popup, {
+    autoAlpha: 0,
+    duration: 0.3,
+    ease: "power2.in"
+  });
+}
+
+closePopup.addEventListener("click", closePopupAnim);
+
+popup.addEventListener("click", (e) => {
+  if (e.target === popup) {
+    closePopupAnim();
+  }
+});
+
+
 
 // ==========================
 // Scroll to Top
@@ -390,33 +446,33 @@ function initSectionAnimations() {
 
     // LEFT COLUMN PIN
     ScrollTrigger.matchMedia({
-    "(min-width: 992px)": function() {
-        ScrollTrigger.create({
-        trigger: ".project-section",
-        start: "top top",
-        end: () => "+=" + (
-            document.querySelector(".project-section .col:nth-child(2)").scrollHeight 
-            - document.querySelector(".project-section .col:nth-child(1)").offsetHeight
-        ),
-        pin: ".project-section .col:nth-child(1)",
-        pinSpacing: true
-        });
-    },
-    "(max-width: 991px)": function() {}
+        "(min-width: 992px)": function () {
+            ScrollTrigger.create({
+                trigger: ".project-section",
+                start: "top top",
+                end: () => "+=" + (
+                    document.querySelector(".project-section .col:nth-child(2)").scrollHeight
+                    - document.querySelector(".project-section .col:nth-child(1)").offsetHeight
+                ),
+                pin: ".project-section .col:nth-child(1)",
+                pinSpacing: true
+            });
+        },
+        "(max-width: 991px)": function () { }
     });
 
 
     gsap.utils.toArray(".projects .prj-img img").forEach(img => {
         gsap.fromTo(img,
-            { 
-                y: "-10%" ,
-            }, 
             {
-                y: "10%",
+                y: "0%",
+            },
+            {
+                y: "-20%",
                 ease: "none",
                 scrollTrigger: {
                     trigger: img,
-                    start: "top bottom",  
+                    start: "top bottom",
                     end: "bottom top",
                     scrub: true
                 }
