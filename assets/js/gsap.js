@@ -155,8 +155,8 @@ window.addEventListener("scroll", () => {
 
     clearTimeout(scrollTimeout);
     scrollTimeout = setTimeout(() => {
-        gsap.to(marquee, { timeScale: 1, duration: 0.5 });
-    }, 200);
+        gsap.to(marquee, { timeScale: 1, duration: 0.3 });
+    }, 0);
 });
 
 // ==========================
@@ -291,7 +291,7 @@ function startHeroAnimation() {
 function initSectionAnimations() {
 
 
-    gsap.to(".image-wrap .container img", {
+    gsap.to("img.scrollImg", {
         y: "-20%",
         ease: "none",
         scrollTrigger: {
@@ -385,6 +385,52 @@ function initSectionAnimations() {
             }
         });
     });
+
+    // Projects
+
+    // LEFT COLUMN PIN
+    ScrollTrigger.create({
+        trigger: ".project-section",
+        start: "top top",
+        end: () => "+=" + document.querySelector(".project-section .col:nth-child(2)").scrollHeight,
+        pin: ".project-section .col:nth-child(1)",
+        pinSpacing: true 
+    });
+
+    // ✅ Image parallax effect
+    gsap.utils.toArray(".projects .prj-img img").forEach(img => {
+        gsap.fromTo(img,
+            { 
+                y: "-10%" ,
+            }, 
+            {
+                y: "10%",
+                ease: "none",
+                scrollTrigger: {
+                    trigger: img,
+                    start: "top bottom",  
+                    end: "bottom top",
+                    scrub: true
+                }
+            }
+        );
+    });
+
+    // ✅ Title fade-in effect
+    gsap.utils.toArray(".projects .prj-title").forEach(title => {
+        gsap.from(title, {
+            y: 50,
+            opacity: 0,
+            duration: 1,
+            scrollTrigger: {
+                trigger: title,
+                start: "top 80%",
+                toggleActions: "play none none reverse"
+            }
+        });
+    });
+
+
 
 };
 
