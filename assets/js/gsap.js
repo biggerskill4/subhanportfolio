@@ -389,15 +389,23 @@ function initSectionAnimations() {
     // Projects
 
     // LEFT COLUMN PIN
-    ScrollTrigger.create({
+    ScrollTrigger.matchMedia({
+    "(min-width: 992px)": function() {
+        ScrollTrigger.create({
         trigger: ".project-section",
         start: "top top",
-        end: () => "+=" + document.querySelector(".project-section .col:nth-child(2)").scrollHeight,
+        end: () => "+=" + (
+            document.querySelector(".project-section .col:nth-child(2)").scrollHeight 
+            - document.querySelector(".project-section .col:nth-child(1)").offsetHeight
+        ),
         pin: ".project-section .col:nth-child(1)",
-        pinSpacing: true 
+        pinSpacing: true
+        });
+    },
+    "(max-width: 991px)": function() {}
     });
 
-    // ✅ Image parallax effect
+
     gsap.utils.toArray(".projects .prj-img img").forEach(img => {
         gsap.fromTo(img,
             { 
@@ -415,21 +423,6 @@ function initSectionAnimations() {
             }
         );
     });
-
-    // ✅ Title fade-in effect
-    gsap.utils.toArray(".projects .prj-title").forEach(title => {
-        gsap.from(title, {
-            y: 50,
-            opacity: 0,
-            duration: 1,
-            scrollTrigger: {
-                trigger: title,
-                start: "top 80%",
-                toggleActions: "play none none reverse"
-            }
-        });
-    });
-
 
 
 };
