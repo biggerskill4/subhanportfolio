@@ -1,8 +1,6 @@
 # 👋 Hi, I'm Subhan Ahmed
 ### Web & WordPress Developer
 
-[![Website](https://img.shields.io/badge/Portfolio-Visit-blue)](https://github.com/subhandev860)
-
 ---
 
 ## 💼 About Me
@@ -27,7 +25,7 @@ Hi! I'm **Subhan Ahmed**, a professional WordPress developer at **On Screen Solu
 ---
 
 ## 📂 Projects
-Check out my [GitHub repositories](https://github.com/subhandev860) for my work and open-source projects!
+Check out my [GitHub repositories](https://github.com/biggerskill4) for my work and open-source projects!
 
 ---
 
