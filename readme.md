@@ -1,4 +1,4 @@
-# Subhan Ahmed — Portfolio Website
+# Subhan Ahmed | Portfolio Website
 
 A modern, animated personal portfolio for **Subhan Ahmed**, Web & WordPress Developer based in Pakistan. Built with vanilla HTML, CSS, and JavaScript — no frameworks, clean code only.
 
@@ -13,37 +13,6 @@ Open `index.html` directly in your browser — no build step required.
 ## 📁 Project Structure
 
 ```
-portfolio/
-├── index.html                  # Main HTML file — all sections
-├── README.md                   # This file
-│
-├── assets/
-│   ├── css/
-│   │   ├── style.css           # Base styles, variables, global elements
-│   │   ├── main.css            # Section-specific styles (hero, about, projects, etc.)
-│   │   └── responsive.css      # Breakpoint overrides (1600px → 500px)
-│   │
-│   ├── js/
-│   │   ├── script.js           # Core JS — ScrollSmoother, splitText, anchor scroll, nav
-│   │   └── gsap.js             # All GSAP animations — preloader, hero, scroll triggers, magnetic
-│   │
-│   ├── images/
-│   │   ├── hero-img.webp       # Hero background globe
-│   │   ├── logo.webp           # Header logo
-│   │   ├── btn-01.webp         # Rotating circle button image
-│   │   ├── luffy.webp          # Parallax scroll section image
-│   │   ├── favicon.ico         # Browser tab icon
-│   │   └── projects/
-│   │       └── prj.png         # Project card image
-│   │
-│   └── fonts/
-│       └── GrandSlang/
-│           ├── GrandSlang-Roman.otf
-│           └── GrandSlang-Roman.ttf
-```
-
----
-
 ## 🧩 Sections
 
 | Section     | ID           | Description                                              |
