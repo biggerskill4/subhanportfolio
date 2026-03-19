@@ -12,7 +12,6 @@ Open `index.html` directly in your browser — no build step required.
 
 ## 📁 Project Structure
 
-```
 ## 🧩 Sections
 
 | Section     | ID           | Description                                              |
