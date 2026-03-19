@@ -1,8 +1,5 @@
 /* Large desktops (1600px and above) */
 @media (max-width: 1600px) {
-    .about .container .col p {
-        font-size: 40px;
-    }
 }
 
 /* laptops */
@@ -10,10 +7,6 @@
     .hero h1 {
         font-size: 120px;
         line-height: 120px;
-    }
-
-    .about .container .col p {
-        font-size: 30px;
     }
 
     .counter-box .counter {
@@ -36,10 +29,6 @@
         flex-wrap: wrap;
         font-size: 100px;
         line-height: 100px;
-    }
-
-    .about .container .col p {
-        font-size: 30px;
     }
 
     .counter-box .counter {
@@ -82,18 +71,25 @@
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .project-section .container {
+    .prj-header {
         flex-direction: column;
-        padding: 10px 30px;
+        align-items: flex-start;
+        gap: 20px;
+        padding-bottom: 40px;
+        margin-bottom: 40px;
     }
 
-    .project-section .col:nth-child(1) {
-        width: 100%;
-        padding: 10px;
+    .prj-header-left h2 {
+        font-size: 60px;
+        line-height: 60px;
     }
 
-    .project-section .col:nth-child(2) {
-        width: 100%;
+    .prj-card:hover .prj-card-img {
+        width: 220px;
+    }
+
+    .prj-card-info h3 {
+        font-size: 32px;
     }
 
 }
@@ -106,25 +102,6 @@
         display: none;
     }
 
-    .preloader .container {
-        flex-wrap: wrap;
-        gap: 50px;
-    }
-
-    .preloader .text-preloader {
-        width: 100%;
-        font-size: 24px;
-        font-weight: 400;
-    }
-
-    .preloader .text-preloader p {
-        font-size: 24px;
-        display: none;
-    }
-
-    .preloader .percentage {
-        width: 100%;
-    }
 
     .hero .bg-hero {
         width: 50vw;
@@ -169,14 +146,6 @@
         height: 180%;
     }
 
-    .about .container {
-        flex-direction: column;
-    }
-
-    .about .container .col p {
-        font-size: 30px;
-    }
-
     .counter-box .counter {
         font-size: 40px;
         line-height: 40px;
@@ -190,14 +159,21 @@
         font-size: 40px;
     }
 
-    .project-section .container {
-        flex-direction: column;
-        padding: 10px 20px;
+    .prj-header-left h2 {
+        font-size: 48px;
+        line-height: 48px;
     }
 
-    .project-section .col:nth-child(1) h2 {
+    .prj-card-img {
+        display: none;
+    }
+
+    .prj-card-info h3 {
+        font-size: 28px;
+    }
+
+    .prj-card-num {
         font-size: 50px;
-        line-height: 50px;
     }
 }
 
@@ -227,20 +203,6 @@
         height: 18px;
     }
 
-    .preloader .text-preloader p {
-        font-size: 18px;
-    }
-
-    .preloader .percentage {
-        font-size: 60px;
-        line-height: 60px;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        align-items: center;
-        justify-content: center;
-    }
 
     header .logo img {
         width: 60px;
@@ -285,14 +247,6 @@
         height: 180%;
     }
 
-    .about .container .col h3 {
-        font-size: 24px;
-    }
-
-    .about .container .col p {
-        font-size: 18px;
-    }
-
     .counter-section .container {
         grid-template-columns: repeat(2, 1fr);
         gap: 10px;
@@ -314,42 +268,158 @@
     .scrolling-text .rail h4 {
         font-size: 30px;
     }
-    .project-section {
-        padding-top: 30px;
+    .prj-header {
+        padding-bottom: 30px;
+        margin-bottom: 30px;
     }
 
-    .project-section .container {
+    .prj-header-left h2 {
+        font-size: 36px;
+        line-height: 36px;
+    }
+
+    .prj-card-info h3 {
+        font-size: 22px;
+    }
+
+    .prj-card-num {
+        font-size: 36px;
+    }
+
+}
+/* Services responsive */
+@media (max-width: 1200px) {
+    .svc-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .svc-heading {
+        font-size: 48px;
+        letter-spacing: -2px;
+    }
+    .svc-grid {
+        grid-template-columns: 1fr;
+    }
+    .svc-header-top {
         flex-direction: column;
-        padding: 0;
+        align-items: flex-start;
+        gap: 16px;
     }
-    .project-section .col:nth-child(1) h2 {
-        font-size: 35px;
-        line-height: 35px;
+}
+
+@media (max-width: 500px) {
+    .svc-heading {
+        font-size: 36px;
+        letter-spacing: -1px;
+    }
+    .svc-card {
+        padding: 28px 24px;
+    }
+    .svc-card-body h3 {
+        font-size: 22px;
+    }
+}
+
+/* Contact + Footer responsive */
+@media (max-width: 992px) {
+    .contact-body {
+        grid-template-columns: 1fr;
+        gap: 50px;
     }
 
-    .project-section .col:nth-child(1) p {
-        font-size: 16px;
+    .footer-top {
+        flex-wrap: wrap;
+        gap: 24px;
     }
-    .projects {
-        gap: 30px;
-    }
-    .projects .prj-img {
-        height: 50vh;
-    }
-     .projects .prj-img .categories {
-        bottom: 15px;
-        left: 15px;
-     }
-    .projects .prj-img .categories span {
-        font-size: 13px;
-        padding: 8px 10px;
-    }
-    .projects .prj-title h3 {
-        font-size: 26px;
+}
+
+@media (max-width: 768px) {
+    .contact-heading {
+        letter-spacing: -2px;
     }
 
-    .projects .prj-title p {
-        font-size: 16px;
+    .cf-row {
+        grid-template-columns: 1fr;
     }
 
+    .contact-form-wrap {
+        padding: 28px 24px;
+    }
+
+    .footer-nav {
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+
+    .footer-watermark {
+        font-size: 18vw;
+    }
+}
+
+@media (max-width: 500px) {
+    .contact-section {
+        padding-top: 60px;
+    }
+
+    .contact-heading {
+        letter-spacing: -1px;
+    }
+
+    .cf-footer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .footer-top {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
+    }
+}
+
+/* About responsive */
+@media (max-width: 992px) {
+    .about-container {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+    .about-left {
+        position: static;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+    .about-img-wrap {
+        grid-column: 1 / -1;
+        aspect-ratio: 16/7;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-left {
+        grid-template-columns: 1fr;
+    }
+    .about-img-wrap {
+        aspect-ratio: 4/3;
+    }
+    .about-heading {
+        letter-spacing: -1px;
+    }
+}
+
+@media (max-width: 500px) {
+    .about-heading {
+        font-size: 34px;
+    }
+    .about-actions {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 }

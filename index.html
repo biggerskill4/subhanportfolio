@@ -15,8 +15,6 @@
     <!-- icons -->
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <!-- lenis -->
-    <script src="https://unpkg.com/lenis@1.3.8/dist/lenis.min.js"></script>
 
 </head>
 
@@ -77,31 +75,53 @@
     <div class="custom-cursor-circle"></div>
     <!-- custom cursor end -->
 
-    <!-- Back to Top Button -->
-    <button class="backToTop" id="backToTop" href="#home" title="Back to Top">
-        <div class="wrapper flex-col">
-            <ion-icon name="arrow-up"></ion-icon>
-            <ion-icon name="arrow-up"></ion-icon>
+
+    <!-- Preloader -->
+    <section class="preloader" id="preloader">
+        <!-- Animated background grid lines -->
+        <div class="pre-lines">
+            <div class="pre-line"></div>
+            <div class="pre-line"></div>
+            <div class="pre-line"></div>
+            <div class="pre-line"></div>
+            <div class="pre-line"></div>
         </div>
-    </button>
 
+        <!-- Top bar -->
+        <div class="pre-top">
+            <span class="pre-logo">SA</span>
+            <span class="pre-status">Initializing...</span>
+        </div>
 
-    <!-- preloader -->
-    <section class="preloader flex-row">
-        <!-- slide boxes -->
-        <div class="loader-slide"></div>
-        <div class="loader-slide"></div>
-        <!-- content -->
-        <div class="container flex-row">
-            <div class="text-preloader">
-                <p>I am a professional WordPress developer. I have expertise in designing, developing, and maintaining
-                    WordPress websites to meet client needs efficiently.</p>
+        <!-- Center — big word flip -->
+        <div class="pre-center">
+            <div class="pre-word-wrap">
+                <div class="pre-word" id="preWord">DESIGN</div>
             </div>
-            <div class="percentage"><span>0%</span></div>
+            <div class="pre-word-wrap pre-word-wrap--sub">
+                <div class="pre-word pre-word--sub" id="preWordSub">DEVELOP</div>
+            </div>
         </div>
-    </section>
-    <!-- preloader end -->
 
+        <!-- Bottom bar -->
+        <div class="pre-bottom">
+            <div class="pre-bar-track">
+                <div class="pre-bar-fill" id="preBarFill"></div>
+            </div>
+            <div class="pre-bottom-row">
+                <span class="pre-tagline">Subhan Ahmed &mdash; Web Developer</span>
+                <span class="pre-count" id="preCount">000</span>
+            </div>
+        </div>
+
+        <!-- Exit curtain -->
+        <div class="pre-curtain" id="preCurtain"></div>
+    </section>
+    <!-- Preloader End -->
+
+    <!-- ScrollSmoother wrapper — all scrollable content goes inside -->
+    <div id="smooth-wrapper">
+    <div id="smooth-content">
 
     <!-- header -->
     <header class="flex-row">
@@ -120,8 +140,13 @@
                     <li><a href="#contact" data-text="Contact">Contact</a></li>
                 </ul>
             </div>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
             <div class="header-btn">
-                <a hre="#" class="cta open-popup">
+                <a href="#" class="cta open-popup">
                     <div class="btn-caption">
                         <div class="btn-text">
                             Get Started
@@ -139,6 +164,18 @@
         </div>
     </header>
     <!-- header end -->
+
+    <!-- Mobile Nav -->
+    <nav class="mobile-nav" id="mobileNav">
+        <ul>
+            <li><a href="#home" class="mobile-nav-link">Home</a></li>
+            <li><a href="#about" class="mobile-nav-link">About</a></li>
+            <li><a href="#projects" class="mobile-nav-link">Projects</a></li>
+            <li><a href="#services" class="mobile-nav-link">Services</a></li>
+            <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
+        </ul>
+    </nav>
+    <!-- Mobile Nav End -->
 
 
     <!-- hero -->
@@ -188,35 +225,55 @@
 
 
 
-    <!-- About Me -->
-    <section class="about flex-row" id="about">
-        <div class="container flex-row">
-            <div class="col">
-                <h3><ion-icon name="finger-print"></ion-icon> About Me</h3>
-            </div>
-            <div class="col flex-col">
-                <p>A passionate web developer with expertise in PHP, HTML, CSS, JavaScript, WordPress, and Shopify.
-                    Focused on creating responsive, modern, and user-friendly websites.</p>
-                <div class="btn">
-                    <a hre="#" class="cta open-popup">
+    <!-- About -->
+    <section class="about" id="about">
+        <div class="about-container">
+
+            <!-- Left — heading sticky -->
+            <div class="about-left">
+                <h2 class="about-heading">
+                    Crafting Digital<br>
+                    <em>Experiences</em> That<br>
+                    Actually Work.
+                </h2>
+                <div class="about-actions">
+                    <a href="#" class="cta open-popup">
                         <div class="btn-caption">
-                            <div class="btn-text">
-                                Say Hello
-                            </div>
-                            <div class="btn-text">
-                                Say Hello
-                            </div>
+                            <div class="btn-text">Say Hello</div>
+                            <div class="btn-text">Say Hello</div>
                         </div>
                         <span class="arrow-wrap">
                             <ion-icon name="arrow-forward" class="btn-arrow"></ion-icon>
                             <ion-icon name="arrow-forward" class="btn-arrow"></ion-icon>
                         </span>
                     </a>
+                    <a href="#projects" class="about-link">
+                        View My Work
+                        <ion-icon name="arrow-forward"></ion-icon>
+                    </a>
                 </div>
             </div>
+
+            <!-- Right — desc + stack -->
+            <div class="about-right">
+                <p class="about-desc">I'm <strong>Subhan Ahmed</strong>, a Web &amp; WordPress Developer based in Pakistan. With 3+ years of hands-on experience, I build fast, modern, and user-friendly websites that help businesses grow online. Currently working at <strong>Disc & Drive</strong>, I specialize in turning ideas into clean, functional digital products.</p>
+
+                <!-- Tech stack tags -->
+                <div class="about-stack">
+                    <span>WordPress</span>
+                    <span>Shopify</span>
+                    <span>HTML / CSS</span>
+                    <span>JavaScript</span>
+                    <span>PHP</span>
+                    <span>Webflow</span>
+                    <span>CMS</span>
+                    <span>WooCommerce</span>
+                </div>
+            </div>
+
         </div>
     </section>
-    <!-- About Me End -->
+    <!-- About End -->
 
     <!-- counter -->
     <section class="counter-section flex-row">
@@ -244,16 +301,16 @@
     <!-- scrolling -->
     <div class="scrolling-text">
         <div class="rail">
-            <h4>Weblflow</h4>
-            <h4>Frontened</h4>
+            <h4>Webflow</h4>
+            <h4>Frontend</h4>
             <h4>Wordpress</h4>
             <h4>Shopify</h4>
             <h4>CMS</h4>
             <h4>PHP</h4>
             <h4>JS</h4>
             <h4>CSS</h4>
-            <h4>Weblflow</h4>
-            <h4>Frontened</h4>
+            <h4>Webflow</h4>
+            <h4>Frontend</h4>
             <h4>Wordpress</h4>
             <h4>Shopify</h4>
             <h4>CMS</h4>
@@ -265,19 +322,18 @@
     <!-- scrolling end -->
 
 
-    <section class="project-section flex-row">
-        <div class="container flex-row">
-            <div class="col">
+    <section class="project-section" id="projects">
+        <!-- Section Header -->
+        <div class="prj-header">
+            <div class="prj-header-left">
                 <h2>Featured<br>projects</h2>
+            </div>
+            <div class="prj-header-right">
                 <p>Explore a selection of projects blending creativity with practical design</p>
-                <a hre="#" class="cta open-popup">
+                <a href="#" class="cta open-popup">
                     <div class="btn-caption">
-                        <div class="btn-text">
-                            Get Started
-                        </div>
-                        <div class="btn-text">
-                            Get Started
-                        </div>
+                        <div class="btn-text">Get Started</div>
+                        <div class="btn-text">Get Started</div>
                     </div>
                     <span class="arrow-wrap">
                         <ion-icon name="arrow-forward" class="btn-arrow"></ion-icon>
@@ -285,80 +341,113 @@
                     </span>
                 </a>
             </div>
-            <div class="col">
-                <div class="projects">
-                    <!-- project 1 -->
-                    <div class="project">
-                        <div class="prj-img">
-                            <img src="assets/images/projects/prj.png" alt="Buy Essential Oils">
-                            <div class="categories">
-                                <span>E-commerce</span><span>Wordpress</span>
-                            </div>
-                        </div>
-                        <div class="prj-title">
-                            <h3>Buy Essential Oils</h3>
-                            <p>A modern, responsive e-commerce website for a business selling essential oils and related
-                                products.</p>
-                        </div>
-                    </div>
-                    <!-- project 2 -->
-                    <div class="project">
-                        <div class="prj-img">
-                            <img src="assets/images/luffy.webp" alt="Buy Essential Oils">
-                            <div class="categories">
-                                <span>E-commerce</span><span>Wordpress</span>
-                            </div>
-                        </div>
-                        <div class="prj-title">
-                            <h3>Monkey D. Lufyy</h3>
-                            <p>A modern, responsive e-commerce website for a business selling essential oils and related
-                                products.</p>
-                        </div>
-                    </div>
-                    <!-- project 3 -->
-                    <div class="project">
-                        <div class="prj-img">
-                            <img src="assets/images/projects/prj.png" alt="Buy Essential Oils">
-                            <div class="categories">
-                                <span>E-commerce</span><span>Wordpress</span>
-                            </div>
-                        </div>
-                        <div class="prj-title">
-                            <h3>Buy Essential Oils</h3>
-                            <p>A modern, responsive e-commerce website for a business selling essential oils and related
-                                products.</p>
-                        </div>
-                    </div>
-                    <!-- project 4 -->
-                    <div class="project">
-                        <div class="prj-img">
-                            <img src="assets/images/projects/prj.png" alt="Buy Essential Oils">
-                            <div class="categories">
-                                <span>E-commerce</span><span>Wordpress</span>
-                            </div>
-                        </div>
-                        <div class="prj-title">
-                            <h3>Buy Essential Oils</h3>
-                            <p>A modern, responsive e-commerce website for a business selling essential oils and related
-                                products.</p>
-                        </div>
-                    </div>
-                    <!-- project 5 -->
-                    <div class="project">
-                        <div class="prj-img">
-                            <img src="assets/images/projects/prj.png" alt="Buy Essential Oils">
-                            <div class="categories">
-                                <span>E-commerce</span><span>Wordpress</span>
-                            </div>
-                        </div>
-                        <div class="prj-title">
-                            <h3>Buy Essential Oils</h3>
-                            <p>A modern, responsive e-commerce website for a business selling essential oils and related
-                                products.</p>
-                        </div>
-                    </div>
+        </div>
 
+        <!-- Stacked Cards -->
+        <div class="prj-stack-wrap">
+            <div class="prj-card" data-index="1">
+                <div class="prj-card-inner">
+                    <div class="prj-card-img">
+                        <img src="assets/images/projects/prj.png" alt="Buy Essential Oils">
+                    </div>
+                    <div class="prj-card-info">
+                        <div class="prj-card-meta">
+                            <span>E-commerce</span>
+                            <span>Wordpress</span>
+                        </div>
+                        <h3>Buy Essential Oils</h3>
+                        <p>A modern, responsive e-commerce website for a business selling essential oils and related products.</p>
+                        <a href="#" class="prj-link">
+                            View Project
+                            <ion-icon name="arrow-forward"></ion-icon>
+                        </a>
+                    </div>
                 </div>
+                <div class="prj-card-num">01</div>
+            </div>
+
+            <div class="prj-card" data-index="2">
+                <div class="prj-card-inner">
+                    <div class="prj-card-img">
+                        <img src="assets/images/luffy.webp" alt="Monkey D. Luffy">
+                    </div>
+                    <div class="prj-card-info">
+                        <div class="prj-card-meta">
+                            <span>E-commerce</span>
+                            <span>Wordpress</span>
+                        </div>
+                        <h3>Monkey D. Luffy</h3>
+                        <p>A modern, responsive e-commerce website for a business selling essential oils and related products.</p>
+                        <a href="#" class="prj-link">
+                            View Project
+                            <ion-icon name="arrow-forward"></ion-icon>
+                        </a>
+                    </div>
+                </div>
+                <div class="prj-card-num">02</div>
+            </div>
+
+            <div class="prj-card" data-index="3">
+                <div class="prj-card-inner">
+                    <div class="prj-card-img">
+                        <img src="assets/images/projects/prj.png" alt="Project Three">
+                    </div>
+                    <div class="prj-card-info">
+                        <div class="prj-card-meta">
+                            <span>E-commerce</span>
+                            <span>Wordpress</span>
+                        </div>
+                        <h3>Buy Essential Oils</h3>
+                        <p>A modern, responsive e-commerce website for a business selling essential oils and related products.</p>
+                        <a href="#" class="prj-link">
+                            View Project
+                            <ion-icon name="arrow-forward"></ion-icon>
+                        </a>
+                    </div>
+                </div>
+                <div class="prj-card-num">03</div>
+            </div>
+
+            <div class="prj-card" data-index="4">
+                <div class="prj-card-inner">
+                    <div class="prj-card-img">
+                        <img src="assets/images/projects/prj.png" alt="Project Four">
+                    </div>
+                    <div class="prj-card-info">
+                        <div class="prj-card-meta">
+                            <span>E-commerce</span>
+                            <span>Wordpress</span>
+                        </div>
+                        <h3>Buy Essential Oils</h3>
+                        <p>A modern, responsive e-commerce website for a business selling essential oils and related products.</p>
+                        <a href="#" class="prj-link">
+                            View Project
+                            <ion-icon name="arrow-forward"></ion-icon>
+                        </a>
+                    </div>
+                </div>
+                <div class="prj-card-num">04</div>
+            </div>
+
+            <div class="prj-card" data-index="5">
+                <div class="prj-card-inner">
+                    <div class="prj-card-img">
+                        <img src="assets/images/projects/prj.png" alt="Project Five">
+                    </div>
+                    <div class="prj-card-info">
+                        <div class="prj-card-meta">
+                            <span>E-commerce</span>
+                            <span>Wordpress</span>
+                        </div>
+                        <h3>Buy Essential Oils</h3>
+                        <p>A modern, responsive e-commerce website for a business selling essential oils and related products.</p>
+                        <a href="#" class="prj-link">
+                            View Project
+                            <ion-icon name="arrow-forward"></ion-icon>
+                        </a>
+                    </div>
+                </div>
+                <div class="prj-card-num">05</div>
             </div>
         </div>
     </section>
@@ -366,23 +455,300 @@
 
 
 
-    <section class="under-construction flex-row">
-        <div class="container flex-col">
-            <h2>Under Construction</h2>
-            <img src="./assets/images/uc.webp" alt="">
+    <!-- Services Section -->
+    <section class="services-section" id="services">
+
+        <!-- Section header -->
+        <div class="svc-header">
+            <div class="svc-header-top">
+                <span class="svc-label"><ion-icon name="flash"></ion-icon> What I Do</span>
+                <!-- <a href="#" class="cta open-popup">
+                    <div class="btn-caption">
+                        <div class="btn-text">Get Started</div>
+                        <div class="btn-text">Get Started</div>
+                    </div>
+                    <span class="arrow-wrap">
+                        <ion-icon name="arrow-forward" class="btn-arrow"></ion-icon>
+                        <ion-icon name="arrow-forward" class="btn-arrow"></ion-icon>
+                    </span>
+                </a> -->
+            </div>
+            <h2 class="svc-heading">Services I<br><em>Offer</em></h2>
+        </div>
+
+        <!-- Services grid -->
+        <div class="svc-grid">
+
+            <div class="svc-card">
+                <div class="svc-card-top">
+                    <div class="svc-icon">
+                        <ion-icon name="logo-wordpress"></ion-icon>
+                    </div>
+                    <span class="svc-num">01</span>
+                </div>
+                <div class="svc-card-body">
+                    <h3>WordPress Development</h3>
+                    <p>Custom WordPress themes and plugins built from scratch. Fast, secure, and tailored to your brand — no page builders, clean code only.</p>
+                </div>
+                <div class="svc-card-footer">
+                    <span>Custom Plugins</span>
+                    <span>WooCommerce</span>
+                </div>
+            </div>
+
+            <div class="svc-card">
+                <div class="svc-card-top">
+                    <div class="svc-icon">
+                        <ion-icon name="bag-handle"></ion-icon>
+                    </div>
+                    <span class="svc-num">02</span>
+                </div>
+                <div class="svc-card-body">
+                    <h3>Shopify Stores</h3>
+                    <p>End-to-end Shopify store setup and customization. From theme design to payment integration — launch-ready stores that convert.</p>
+                </div>
+                <div class="svc-card-footer">
+                    <span>Store Setup</span>
+                    <span>Theme Custom</span>
+                    <span>App Integration</span>
+                </div>
+            </div>
+
+            <div class="svc-card">
+                <div class="svc-card-top">
+                    <div class="svc-icon">
+                        <ion-icon name="desktop"></ion-icon>
+                    </div>
+                    <span class="svc-num">03</span>
+                </div>
+                <div class="svc-card-body">
+                    <h3>Web Design</h3>
+                    <p>Modern, responsive UI design focused on user experience. Every pixel crafted with purpose — clean layouts that look great on any device.</p>
+                </div>
+                <div class="svc-card-footer">
+                    <span>UI Design</span>
+                    <span>Responsive</span>
+                    <span>Animations</span>
+                </div>
+            </div>
+
+            <div class="svc-card">
+                <div class="svc-card-top">
+                    <div class="svc-icon">
+                        <ion-icon name="settings"></ion-icon>
+                    </div>
+                    <span class="svc-num">04</span>
+                </div>
+                <div class="svc-card-body">
+                    <h3>Website Maintenance</h3>
+                    <p>Ongoing support, updates, and optimization for your existing site. Keep your website fast, secure, and up to date without the headache.</p>
+                </div>
+                <div class="svc-card-footer">
+                    <span>Updates</span>
+                    <span>Performance</span>
+                    <span>Security</span>
+                </div>
+            </div>
+
+            <div class="svc-card">
+                <div class="svc-card-top">
+                    <div class="svc-icon">
+                        <ion-icon name="code-slash"></ion-icon>
+                    </div>
+                    <span class="svc-num">05</span>
+                </div>
+                <div class="svc-card-body">
+                    <h3>CMS Development</h3>
+                    <p>Custom CMS solutions that give you full control over your content. Easy to manage, built to scale — no technical knowledge required.</p>
+                </div>
+                <div class="svc-card-footer">
+                    <span>CMS Setup</span>
+                    <span>Content Mgmt</span>
+                    <span>Training</span>
+                </div>
+            </div>
+
+            <div class="svc-card svc-card--cta">
+                <div class="svc-cta-inner">
+                    <p>Have a project in mind?</p>
+                    <h3>Let's build something great together.</h3>
+                    <a href="#" class="cta open-popup">
+                        <div class="btn-caption">
+                            <div class="btn-text">Start a Project</div>
+                            <div class="btn-text">Start a Project</div>
+                        </div>
+                        <span class="arrow-wrap">
+                            <ion-icon name="arrow-forward" class="btn-arrow"></ion-icon>
+                            <ion-icon name="arrow-forward" class="btn-arrow"></ion-icon>
+                        </span>
+                    </a>
+                </div>
+            </div>
+
         </div>
     </section>
+    <!-- Services End -->
+
+
+    <!-- ================================
+         Contact Section
+         ================================ -->
+    <section class="contact-section" id="contact">
+
+        <!-- Big CTA heading -->
+        <div class="contact-top">
+            <div class="contact-tag">
+                <ion-icon name="mail"></ion-icon>
+                <span>Get In Touch</span>
+            </div>
+            <h2 class="contact-heading">
+                <span class="ch-line">Let's Work</span>
+                <span class="ch-line ch-line--outline">Together</span>
+            </h2>
+        </div>
+
+        <!-- Info + Form row -->
+        <div class="contact-body">
+
+            <!-- Left — info -->
+            <div class="contact-info">
+                <p class="contact-desc">Have a project in mind or just want to say hello? Fill out the form or reach out directly — I'll get back to you within 24 hours.</p>
+
+                <div class="contact-details">
+                    <a href="mailto:subhanahmede860@gmail.com" class="contact-detail-item">
+                        <div class="cdi-icon"><ion-icon name="mail-outline"></ion-icon></div>
+                        <div class="cdi-text">
+                            <span class="cdi-label">Email</span>
+                            <span class="cdi-value">subhanahmede860@gmail.com</span>
+                        </div>
+                        <ion-icon name="arrow-forward" class="cdi-arrow"></ion-icon>
+                    </a>
+                    <a href="https://github.com/biggerskill4" target="_blank" class="contact-detail-item">
+                        <div class="cdi-icon"><ion-icon name="logo-github"></ion-icon></div>
+                        <div class="cdi-text">
+                            <span class="cdi-label">GitHub</span>
+                            <span class="cdi-value">github.com/biggerskill4</span>
+                        </div>
+                        <ion-icon name="arrow-forward" class="cdi-arrow"></ion-icon>
+                    </a>
+                    <a href="#" class="contact-detail-item">
+                        <div class="cdi-icon"><ion-icon name="logo-linkedin"></ion-icon></div>
+                        <div class="cdi-text">
+                            <span class="cdi-label">LinkedIn</span>
+                            <span class="cdi-value">linkedin.com/in/subhanahmed</span>
+                        </div>
+                        <ion-icon name="arrow-forward" class="cdi-arrow"></ion-icon>
+                    </a>
+                </div>
+
+                <!-- Availability badge -->
+                <div class="contact-availability">
+                    <span class="avail-dot"></span>
+                    <span>Available for freelance projects</span>
+                </div>
+            </div>
+
+            <!-- Right — form -->
+            <div class="contact-form-wrap">
+                <form class="contact-form" id="contactForm">
+                    <div class="cf-row">
+                        <div class="cf-group">
+                            <label for="cf-name">Name</label>
+                            <input type="text" id="cf-name" name="name" placeholder="Your name" required>
+                        </div>
+                        <div class="cf-group">
+                            <label for="cf-email">Email</label>
+                            <input type="email" id="cf-email" name="email" placeholder="your@email.com" required>
+                        </div>
+                    </div>
+                    <div class="cf-group">
+                        <label for="cf-subject">Subject</label>
+                        <input type="text" id="cf-subject" name="subject" placeholder="What's this about?">
+                    </div>
+                    <div class="cf-group">
+                        <label for="cf-message">Message</label>
+                        <textarea id="cf-message" name="message" rows="5" placeholder="Tell me about your project..."></textarea>
+                    </div>
+                    <div class="cf-footer">
+                        <button type="submit" class="cta cf-submit">
+                            <div class="btn-caption">
+                                <div class="btn-text">Send Message</div>
+                                <div class="btn-text">Send Message</div>
+                            </div>
+                            <span class="arrow-wrap">
+                                <ion-icon name="arrow-forward" class="btn-arrow"></ion-icon>
+                                <ion-icon name="arrow-forward" class="btn-arrow"></ion-icon>
+                            </span>
+                        </button>
+                        <span class="cf-note">
+                            <ion-icon name="lock-closed-outline"></ion-icon>
+                            Your info is secure
+                        </span>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </section>
+    <!-- Contact End -->
+
+
+    <!-- ================================
+         Footer
+         ================================ -->
+    <footer class="site-footer" id="footer">
+
+        <!-- Top row — logo + nav -->
+        <div class="footer-top">
+            <div class="footer-logo">
+                <img src="./assets/images/logo.webp" alt="Subhan Ahmed">
+            </div>
+            <nav class="footer-nav">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#services">Services</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <div class="footer-socials">
+                <a href="#" aria-label="GitHub"><ion-icon name="logo-github"></ion-icon></a>
+                <a href="#" aria-label="LinkedIn"><ion-icon name="logo-linkedin"></ion-icon></a>
+                <a href="#" aria-label="Instagram"><ion-icon name="logo-instagram"></ion-icon></a>
+                <a href="#" aria-label="Twitter"><ion-icon name="logo-twitter"></ion-icon></a>
+            </div>
+        </div>
+
+        <!-- Big name watermark -->
+        <div class="footer-watermark" aria-hidden="true">Subhan</div>
+
+        <!-- Bottom row — copyright + back to top -->
+        <div class="footer-bottom">
+            <p>&copy; <span id="footerYear"></span> Subhan Ahmed. All rights reserved.</p>
+            <button class="footer-top-btn" id="footerTopBtn">
+                Back to Top
+                <ion-icon name="arrow-up"></ion-icon>
+            </button>
+        </div>
+
+    </footer>
+    <!-- Footer End -->
+
+
+    </div><!-- smooth-content end -->
+    </div><!-- smooth-wrapper end -->
 
 
 
 
     <!-- Scripts -->
-    <!-- Gsap CDN -->
+    <!-- GSAP + Plugins -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"
         integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"
         integrity="sha512-P2IDYZfqSwjcSjX0BKeNhwRUH8zRPGlgcWl5n6gBLzdi4Y5/0O4zaXrtO4K9TZK6Hn1BenYpKowuCavNandERg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollSmoother.min.js"
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://unpkg.com/split-type"></script>
     <!-- Custom Script -->

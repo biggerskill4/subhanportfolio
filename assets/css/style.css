@@ -41,7 +41,22 @@
 html,
 body {
     overflow-x: hidden;
-    scroll-behavior: smooth;
+    /* scroll-behavior removed — ScrollSmoother handles this */
+}
+
+/* ScrollSmoother requires wrapper to be fixed full-screen */
+#smooth-wrapper {
+    overflow: hidden;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+#smooth-content {
+    overflow: visible;
+    width: 100%;
 }
 
 ::selection {
@@ -159,40 +174,8 @@ button:hover,
     top: 30px;
 }
 
-.backToTop {
-    position: fixed;
-    bottom: 50px;
-    right: 50px;
-    /* display: none; */
-    justify-content: center;
-    align-items: center;
-    padding: 0;
-    width: 50px;
-    height: 50px;
-    z-index: 999;
-    visibility: hidden;
-    opacity: 0;
-    background: transparent;
-    border: 1px solid var(--accent-color);
-    color: var(--accent-color);
-    flex-direction: column;
-}
-.backToTop .wrapper {
-    justify-content: center;
-    align-items: center;
-    gap: 1px;
-}
 
-.backToTop ion-icon.md.hydrated {
-    font-size: 24px;
-    height: 36px;
-    transform: translateY(18px);
-}
 
-.backToTop:hover {
-    background: var(--accent-color);
-    color: var(--accent-text-color);
-}
 
 
 .flex-row {
@@ -211,10 +194,235 @@ button:hover,
 }
 
 
-.under-construction {
-    padding: 30px 10px;
+
+/* ================================
+   Services Section
+   ================================ */
+.services-section {
+    width: 100%;
+    padding: var(--padding-large);
+    padding-top: 80px;
+}
+
+/* Header */
+.svc-header {
+    max-width: var(--max-width);
+    margin: 0 auto 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.svc-header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.svc-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--primary-color);
+}
+
+.svc-label ion-icon {
+    font-size: 16px;
+}
+
+.svc-heading {
+    font-size: clamp(52px, 8vw, 110px);
+    line-height: 0.95;
+    letter-spacing: -3px;
+}
+
+/* Italic style for the second line */
+.svc-heading em {
+    font-style: italic;
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(255,255,255,0.4);
+}
+
+/* Grid */
+.svc-grid {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+}
+
+/* Card base */
+.svc-card {
+    background: #0f0f0f;
+    padding: 40px 36px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    border: 1px solid #1a1a1a;
+    transition: background 0.35s ease, border-color 0.35s ease;
+    cursor: default;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Hover glow line at top of card */
+.svc-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 0%;
+    height: 2px;
+    background: var(--primary-color);
+    transition: width 0.4s ease;
+    box-shadow: 0 0 12px var(--primary-color);
+}
+
+.svc-card:hover::before {
     width: 100%;
 }
+
+.svc-card:hover {
+    background: #131313;
+    border-color: #2a2a2a;
+}
+
+/* Card top row */
+.svc-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.svc-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    background: #1a1a1a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: var(--primary-color);
+    transition: background 0.3s, transform 0.3s;
+}
+
+.svc-card:hover .svc-icon {
+    background: var(--primary-color);
+    color: #000;
+    transform: rotate(-8deg) scale(1.05);
+}
+
+.svc-num {
+    font-family: var(--heading-font);
+    font-size: 18px;
+    color: #2a2a2a;
+    transition: color 0.3s;
+}
+
+.svc-card:hover .svc-num {
+    color: #444;
+}
+
+/* Card body */
+.svc-card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex: 1;
+}
+
+.svc-card-body h3 {
+    font-size: 26px;
+    line-height: 1.1;
+    transition: color 0.3s;
+}
+
+.svc-card:hover .svc-card-body h3 {
+    color: var(--primary-color);
+}
+
+.svc-card-body p {
+    font-size: 15px;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Card footer tags */
+.svc-card-footer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding-top: 16px;
+    border-top: 1px solid #1e1e1e;
+}
+
+.svc-card-footer span {
+    font-size: 12px;
+    padding: 5px 12px;
+    border-radius: 50px;
+    border: 1px solid #262626;
+    color: #555;
+    transition: border-color 0.3s, color 0.3s;
+}
+
+.svc-card:hover .svc-card-footer span {
+    border-color: #333;
+    color: #888;
+}
+
+/* CTA card — last cell */
+.svc-card--cta {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    justify-content: center;
+    cursor: default;
+}
+
+.svc-card--cta::before {
+    display: none;
+}
+
+.svc-card--cta:hover {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    filter: brightness(1.1);
+}
+
+.svc-cta-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.svc-cta-inner p {
+    font-size: 13px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(0,0,0,0.5);
+}
+
+.svc-cta-inner h3 {
+    font-size: 28px;
+    line-height: 1.15;
+    color: #000;
+}
+
+.svc-card--cta .cta {
+    background: #000;
+    color: #fff;
+    width: fit-content;
+}
+
+.svc-card--cta .cta .arrow-wrap {
+    background: var(--primary-color);
+    color: #000;
+}
+
+/* Services End */
 
 
 /* Cursor */
@@ -249,25 +457,6 @@ button:hover,
 
 /* Cursor End */
 
-
-.under-construction .container {
-    width: var(--max-width);
-    justify-content: center;
-    align-items: center;
-    gap: 50px;
-    background: var(--primary-color);
-    padding: 30px;
-    border-radius: 50px;
-}
-
-.under-construction h2 {
-    font-size: 50px;
-    text-align: center;
-}
-
-.under-construction img {
-    width: 300px;
-}
 
 @media (max-width: 1600px) {
     :root {
